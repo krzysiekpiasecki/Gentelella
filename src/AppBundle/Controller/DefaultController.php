@@ -5,16 +5,17 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("preview/{name}", name="preview", defaults={"name": "index"})
+     * @Route("template/{name}", name="template", defaults={"name": "index"})
      */
     public function previewAction(Request $request, $name)
     {
-        // replace this example code with whatever you need
-        return $this->render(sprintf('preview/%s.html.twig', $name));
+        return $this->render(sprintf('template/%s.html.twig', $name));
     }
 
     /**
@@ -22,11 +23,9 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, $name)
     {
-        $realPath = sprintf('%s/../', realpath($this->getParameter('kernel.root_dir')));
-        if (! is_readable(sprintf('%s/%s.html.twig', $realPath, $name))) {
-            $name = "index";
+        if (! $this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
+            $name = 'index';
         }
-        // replace this example code with whatever you need
         return $this->render(sprintf('%s.html.twig', $name));
     }
 }
