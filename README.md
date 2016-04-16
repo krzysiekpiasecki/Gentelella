@@ -1,4 +1,5 @@
-gentelella-symfony
-==================
+# Gentelella
 
-A Symfony project created on April 14, 2016, 7:32 pm.
+Gentelella Admin theme is a free to use Bootstrap admin template integrated into a Symfony full stack framework.
+
+[Documentation](https://github.com/SymfonyCollection/Gentelella/wiki) | [Template](https://colorlib.com/polygon/gentelella/index.html)
