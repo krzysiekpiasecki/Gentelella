@@ -1,0 +1,32 @@
+sudo: false
+
+env:
+
+language: php
+
+php:
+  - 5.6
+  - 7.0
+  - nightly
+
+before_install:
+
+install:
+  - travis_retry composer selfupdate
+  - travis_retry composer install --no-interaction --prefer-source
+
+before_script:
+  - phpenv config-add php.ini.dist
+
+script:
+  - ./vendor/bin/php-cs-fixer fix --verbose
+  - ./vendor/bin/phpunit
+
+after_success:
+after_failure:
+after_script:
+before_deploy:
+deploy:
+after_deploy:
+
+
