@@ -32,7 +32,8 @@
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
         "fabpot/php-cs-fixer": "^1.0",
-        "phing/phing": "^2.0"
+        "phing/phing": "^2.0",
+        "phpunit/phpunit": "^5.0"
     },
     "scripts": {
         "post-install-cmd": [
