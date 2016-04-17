@@ -1,0 +1,4 @@
+# Custom PHP configuration used in .travis.yml
+
+# http://docs.travis-ci.com/user/languages/php/#Custom-PHP-configuration
+# http://docs.travis-ci.com/user/languages/php/#PHP-extensions
