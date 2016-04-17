@@ -5,8 +5,6 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
@@ -23,9 +21,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, $name)
     {
-        if (! $this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
+        if (!$this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
             $name = 'index';
         }
+
         return $this->render(sprintf('%s.html.twig', $name));
     }
 }
