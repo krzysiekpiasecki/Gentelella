@@ -17,8 +17,16 @@ class DefaultController extends Controller
      * @param string $name
      * @return Response
      */
-    public function previewAction(Request $request, $name)
+    public function templateAction(Request $request, $name)
     {
+        if (! $this->get('templating')->exists(sprintf('template/%s.html.twig', $name))) {
+            throw $this->createNotFoundException(
+                sprintf(
+                    'Page %s not found',
+                    $name
+                )
+            );
+        }
         return $this->render(sprintf('template/%s.html.twig', $name));
     }
 
@@ -30,7 +38,7 @@ class DefaultController extends Controller
      * @param string $name
      * @return Response
      */
-    public function indexAction(Request $request, $name)
+    public function adminAction(Request $request, $name)
     {
         if (!$this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
             $name = 'index';
