@@ -10,16 +10,18 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * Template homepage
+     * Template homepage.
      *
      * @Route("template/{name}", name="template", defaults={"name": "index"})
+     *
      * @param Request $request
-     * @param string $name
+     * @param string  $name
+     *
      * @return Response
      */
     public function templateAction(Request $request, $name)
     {
-        if (! $this->get('templating')->exists(sprintf('template/%s.html.twig', $name))) {
+        if (!$this->get('templating')->exists(sprintf('template/%s.html.twig', $name))) {
             throw $this->createNotFoundException(
                 sprintf(
                     'Page %s not found',
@@ -27,15 +29,18 @@ class DefaultController extends Controller
                 )
             );
         }
+
         return $this->render(sprintf('template/%s.html.twig', $name));
     }
 
     /**
-     * Admin homepage
+     * Admin homepage.
      *
      * @Route("admin/{name}", name="admin_homepage", defaults={"name": "index"})
+     *
      * @param Request $request
-     * @param string $name
+     * @param string  $name
+     *
      * @return Response
      */
     public function adminAction(Request $request, $name)
@@ -43,18 +48,19 @@ class DefaultController extends Controller
         if (!$this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
             $name = 'index';
         }
+
         return $this->render(sprintf('%s.html.twig', $name));
     }
 
     /**
-     * Redirect to admin homepage
+     * Redirect to admin homepage.
      *
      * @Route("/", name="homepage")
      */
     public function redirectAction(Request $request)
     {
         return $this->redirectToRoute('admin_homepage', [
-            'name' => 'index'
+            'name' => 'index',
         ]);
     }
 }

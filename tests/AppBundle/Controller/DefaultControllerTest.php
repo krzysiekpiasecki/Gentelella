@@ -9,9 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class DefaultControllerTest extends WebTestCase
 {
-
     /**
-     * Test switching between template and admin pages
+     * Test switching between template and admin pages.
      */
     public function testSwitchToTemplate()
     {
@@ -48,8 +47,9 @@ class DefaultControllerTest extends WebTestCase
     /**
      * @dataProvider templatePages
      * @covers ::templateAction
+     *
      * @param string $path
-     * @param int $statusCode
+     * @param int    $statusCode
      */
     public function testTemplate($path, $statusCode)
     {
@@ -61,8 +61,9 @@ class DefaultControllerTest extends WebTestCase
     /**
      * @dataProvider adminPages
      * @covers ::adminAction
+     *
      * @param string $path
-     * @param int $statusCode
+     * @param int    $statusCode
      */
     public function testAdmin($path, $statusCode)
     {
