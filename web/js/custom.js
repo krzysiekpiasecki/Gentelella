@@ -4,57 +4,75 @@
  * and open the template in the editor.
  */
 
+var URL = window.location,
+    $BODY = $('body'),
+    $MENU_TOGGLE = $('#menu_toggle'),
+    $SIDEBAR_MENU = $('#sidebar-menu'),
+    $SIDEBAR_FOOTER = $('.sidebar-footer'),
+    $LEFT_COL = $('.left_col'),
+    $RIGHT_COL = $('.right_col'),
+    $NAV_MENU = $('.nav_menu'),
+    $FOOTER = $('footer');
+
 // Sidebar
 $(function () {
-    var URL = window.location,
-        $BODY = $('body'),
-        $SIDEBAR_MENU = $('#sidebar-menu'),
-        $MENU_TOGGLE = $('#menu_toggle');
-        $SIDEBAR_FOOTER = $('.sidebar-footer');
-        $LEFT_COL = $('.left_col');
 
-    $SIDEBAR_MENU.find('li ul').slideUp();
-    $SIDEBAR_MENU.find('li').removeClass('active');
+    // TODO: This is some kind of easy fix, maybe we can improve this
+    var setContentHeight = function () {
+        // reset height
+        $RIGHT_COL.css('min-height', $(window).height());
 
-    $SIDEBAR_MENU.find('li').on('click', function(ev) {
-        var link = $('a', this).attr('href');
+        var bodyHeight = $BODY.height(),
+            leftColHeight = $LEFT_COL.eq(1).height() + $SIDEBAR_FOOTER.height(),
+            contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
 
-        // prevent event bubbling on parent menu
-        if (link) {
-            ev.stopPropagation();
-        } 
-        // execute slidedown if parent menu
-        else {
-            if ($(this).is('.active')) {
-                $(this).removeClass('active');
-                $('ul', this).slideUp();
-            } else {
+        // normalize content
+        contentHeight -= $NAV_MENU.height() + $FOOTER.height();
+
+        $RIGHT_COL.css('min-height', contentHeight);
+    };
+
+    $SIDEBAR_MENU.find('a').on('click', function(ev) {
+        var $li = $(this).parent();
+
+        if ($li.is('.active')) {
+            $li.removeClass('active');
+            $('ul:first', $li).slideUp(function() {
+                setContentHeight();
+            });
+        } else {
+            // prevent closing menu if we are on child menu
+            if (!$li.parent().is('.child_menu')) {
                 $SIDEBAR_MENU.find('li').removeClass('active');
                 $SIDEBAR_MENU.find('li ul').slideUp();
-                
-                $(this).addClass('active');
-                $('ul', this).slideDown();
             }
+            
+            $li.addClass('active');
+
+            $('ul:first', $li).slideDown(function() {
+                setContentHeight();
+            });
         }
     });
 
+    // toggle small or large menu
     $MENU_TOGGLE.on('click', function() {
         if ($BODY.hasClass('nav-md')) {
             $BODY.removeClass('nav-md').addClass('nav-sm');
             $LEFT_COL.removeClass('scroll-view').removeAttr('style');
-            $SIDEBAR_FOOTER.hide();
 
             if ($SIDEBAR_MENU.find('li').hasClass('active')) {
                 $SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
             }
         } else {
             $BODY.removeClass('nav-sm').addClass('nav-md');
-            $SIDEBAR_FOOTER.show();
 
             if ($SIDEBAR_MENU.find('li').hasClass('active-sm')) {
                 $SIDEBAR_MENU.find('li.active-sm').addClass('active').removeClass('active-sm');
             }
         }
+
+        setContentHeight();
     });
 
     // check active menu
@@ -62,13 +80,42 @@ $(function () {
 
     $SIDEBAR_MENU.find('a').filter(function () {
         return this.href == URL;
-    }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
+    }).parent('li').addClass('current-page').parents('ul').slideDown(function() {
+        setContentHeight();
+    }).parent().addClass('active');
+
+    // recompute content when resizing
+    $(window).smartresize(function(){  
+        setContentHeight();
+    });
+
 });
 
-// Right column height
-$(".right_col").css("min-height", $(window).height());
-$(window).resize(function () {
-    $(".right_col").css("min-height", $(window).height());
+// Panel toolbox
+$(function () {
+    $('.collapse-link').on('click', function() {
+        var $BOX_PANEL = $(this).closest('.x_panel'),
+            $ICON = $(this).find('i'),
+            $BOX_CONTENT = $BOX_PANEL.find('.x_content');
+        
+        // fix for some div with hardcoded fix class
+        if ($BOX_PANEL.attr('style')) {
+            $BOX_CONTENT.slideToggle(200, function(){
+                $BOX_PANEL.removeAttr('style');
+            });
+        } else {
+            $BOX_CONTENT.slideToggle(200); 
+            $BOX_PANEL.css('height', 'auto');  
+        }
+
+        $ICON.toggleClass('fa-chevron-up fa-chevron-down');
+    });
+
+    $('.close-link').click(function () {
+        var $BOX_PANEL = $(this).closest('.x_panel');
+
+        $BOX_PANEL.remove();
+    });
 });
 
 // Tooltip
@@ -90,26 +137,6 @@ if ($(".js-switch")[0]) {
         });
     });
 }
-
-// Close ibox function
-$('.close-link').click(function () {
-    var content = $(this).closest('div.x_panel');
-    content.remove();
-});
-
-// Collapse ibox function
-$('.collapse-link').click(function () {
-    var x_panel = $(this).closest('div.x_panel');
-    var button = $(this).find('i');
-    var content = x_panel.find('div.x_content');
-    content.slideToggle(200);
-    (x_panel.hasClass('fixed_height_390') ? x_panel.toggleClass('').toggleClass('fixed_height_390') : '');
-    (x_panel.hasClass('fixed_height_320') ? x_panel.toggleClass('').toggleClass('fixed_height_320') : '');
-    button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-    setTimeout(function () {
-        x_panel.resize();
-    }, 50);
-});
 
 // iCheck
 if ($("input.flat")[0]) {
@@ -315,3 +342,39 @@ if (typeof NProgress != 'undefined') {
         NProgress.done();
     });
 }
+
+/**
+ * Resize function without multiple trigger
+ * 
+ * Usage:
+ * $(window).smartresize(function(){  
+ *     // code here
+ * });
+ */
+(function($,sr){
+    // debouncing function from John Hann
+    // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+    var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+        return function debounced () {
+            var obj = this, args = arguments;
+            function delayed () {
+                if (!execAsap)
+                    func.apply(obj, args);
+                timeout = null; 
+            }
+
+            if (timeout)
+                clearTimeout(timeout);
+            else if (execAsap)
+                func.apply(obj, args);
+
+            timeout = setTimeout(delayed, threshold || 100); 
+        };
+    };
+
+    // smartresize 
+    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');

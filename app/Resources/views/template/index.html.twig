@@ -27,13 +27,13 @@
   <script src="{{ asset('js/nprogress.js') }}"></script>
 
   <!--[if lt IE 9]>
-        <script src="{{ asset('../assets/js/ie8-responsive-file-warning.js') }}"></script>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="'https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
 </head>
@@ -175,10 +175,26 @@
                     </li>
                     <li><a href="/template/pricing_tables">Pricing Tables</a>
                     </li>
-
                   </ul>
                 </li>
-                <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
+                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                      <li><a href="#level1_1">Level One</a>
+                      <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu" style="display: none">
+                          <li class="sub_menu"><a href="/template/level2">Level Two</a>
+                          </li>
+                          <li><a href="#level2_1">Level Two</a>
+                          </li>
+                          <li><a href="#level2_2">Level Two</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#level1_2">Level One</a>
+                      </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
                 </li>
               </ul>
             </div>
@@ -215,7 +231,7 @@
             </div>
 
             <div class="nav toggle">
-              <a href="/admin/index">Site</a>
+              <a href="/admin">Site</a>
             </div>
 
             <ul class="nav navbar-nav navbar-right">
@@ -224,7 +240,7 @@
                   <img src="{{ asset('images/img.jpg') }}" alt="">John Doe
                   <span class=" fa fa-angle-down"></span>
                 </a>
-                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
                   <li><a href="javascript:;">  Profile</a>
                   </li>
                   <li>
@@ -246,7 +262,7 @@
                   <i class="fa fa-envelope-o"></i>
                   <span class="badge bg-green">6</span>
                 </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                   <li>
                     <a>
                       <span class="image">
@@ -587,7 +603,6 @@
                 <div class="clearfix"></div>
               </div>
               <div class="x_content">
-
                 <table class="" style="width:100%">
                   <tr>
                     <th style="width:37%;">
@@ -926,8 +941,7 @@
                 </div>
               </div>
               <!-- End to do list -->
-
-
+              
               <!-- start of weather widget -->
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
@@ -955,25 +969,19 @@
                       <div class="col-sm-12">
                         <div class="temperature"><b>Monday</b>, 07:30 AM
                           <span>F</span>
-                          <span><b>C</b>
-                                        </span>
+                          <span><b>C</b></span>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-4">
                         <div class="weather-icon">
-                          <span>
-                                            <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
-                                        </span>
-
+                          <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
                         </div>
                       </div>
                       <div class="col-sm-8">
                         <div class="weather-text">
-                          <h2>Texas
-                                            <br><i>Partly Cloudy Day</i>
-                                        </h2>
+                          <h2>Texas <br><i>Partly Cloudy Day</i></h2>
                         </div>
                       </div>
                     </div>
@@ -982,22 +990,16 @@
                         <h3 class="degrees">23</h3>
                       </div>
                     </div>
-                    <div class="clearfix"></div>
 
+                    <div class="clearfix"></div>
 
                     <div class="row weather-days">
                       <div class="col-sm-2">
                         <div class="daily-weather">
                           <h2 class="day">Mon</h2>
                           <h3 class="degrees">25</h3>
-                          <span>
-                                                <canvas id="clear-day" width="32" height="32">
-                                                </canvas>
-
-                                        </span>
-                          <h5>15
-                                            <i>km/h</i>
-                                        </h5>
+                          <canvas id="clear-day" width="32" height="32"></canvas>
+                          <h5>15 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="col-sm-2">
@@ -1005,9 +1007,7 @@
                           <h2 class="day">Tue</h2>
                           <h3 class="degrees">25</h3>
                           <canvas height="32" width="32" id="rain"></canvas>
-                          <h5>12
-                                            <i>km/h</i>
-                                        </h5>
+                          <h5>12 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="col-sm-2">
@@ -1015,9 +1015,7 @@
                           <h2 class="day">Wed</h2>
                           <h3 class="degrees">27</h3>
                           <canvas height="32" width="32" id="snow"></canvas>
-                          <h5>14
-                                            <i>km/h</i>
-                                        </h5>
+                          <h5>14 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="col-sm-2">
@@ -1025,9 +1023,7 @@
                           <h2 class="day">Thu</h2>
                           <h3 class="degrees">28</h3>
                           <canvas height="32" width="32" id="sleet"></canvas>
-                          <h5>15
-                                            <i>km/h</i>
-                                        </h5>
+                          <h5>15 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="col-sm-2">
@@ -1035,9 +1031,7 @@
                           <h2 class="day">Fri</h2>
                           <h3 class="degrees">28</h3>
                           <canvas height="32" width="32" id="wind"></canvas>
-                          <h5>11
-                                            <i>km/h</i>
-                                        </h5>
+                          <h5>11 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="col-sm-2">
@@ -1045,9 +1039,7 @@
                           <h2 class="day">Sat</h2>
                           <h3 class="degrees">26</h3>
                           <canvas height="32" width="32" id="cloudy"></canvas>
-                          <h5>10
-                                            <i>km/h</i>
-                                        </h5>
+                          <h5>10 <i>km/h</i></h5>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -1060,19 +1052,18 @@
             </div>
           </div>
         </div>
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
       </div>
       <!-- /page content -->
-    </div>
 
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
   </div>
 
   <div id="custom_notifications" class="custom-notifications dsp_none">
@@ -1232,47 +1223,49 @@
     icons.play();
   </script>
 
-  <!-- dashbord linegraph -->
+  <!-- Doughnut Chart -->
   <script>
-    Chart.defaults.global.legend = {
-      enabled: false
-    };
+    $('document').ready(function() {
+      var options = {
+        legend: false,
+        responsive: false
+      };
 
-    var data = {
-      labels: [
-        "Symbian",
-        "Blackberry",
-        "Other",
-        "Android",
-        "IOS"
-      ],
-      datasets: [{
-        data: [15, 20, 30, 10, 30],
-        backgroundColor: [
-          "#BDC3C7",
-          "#9B59B6",
-          "#455C73",
-          "#26B99A",
-          "#3498DB"
-        ],
-        hoverBackgroundColor: [
-          "#CFD4D8",
-          "#B370CF",
-          "#34495E",
-          "#36CAAB",
-          "#49A9EA"
-        ]
-
-      }]
-    };
-
-    var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-      type: 'doughnut',
-      tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-      data: data
+      new Chart(document.getElementById("canvas1"), {
+        type: 'doughnut',
+        tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+        data: {
+          labels: [
+            "Symbian",
+            "Blackberry",
+            "Other",
+            "Android",
+            "IOS"
+          ],
+          datasets: [{
+            data: [15, 20, 30, 10, 30],
+            backgroundColor: [
+              "#BDC3C7",
+              "#9B59B6",
+              "#E74C3C",
+              "#26B99A",
+              "#3498DB"
+            ],
+            hoverBackgroundColor: [
+              "#CFD4D8",
+              "#B370CF",
+              "#E95E4F",
+              "#36CAAB",
+              "#49A9EA"
+            ]
+          }]
+        },
+        options: options
+      });
     });
   </script>
-  <!-- /dashbord linegraph -->
+  <!-- /Doughnut Chart -->
+  
   <!-- datepicker -->
   <script type="text/javascript">
     $(document).ready(function() {

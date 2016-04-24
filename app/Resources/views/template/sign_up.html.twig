@@ -1,3 +1,4 @@
+<!-- TODO: Investigate this broken page -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,25 +26,19 @@
   <script src="{{ asset('js/jquery.min.js') }}"></script>
 
   <!--[if lt IE 9]>
-        <script src="{{ asset('../assets/js/ie8-responsive-file-warning.js') }}"></script>
-        <![endif]-->
+    <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+  <![endif]-->
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-          <script src="{{ asset('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') }}"></script>
-          <script src="{{ asset('https://oss.maxcdn.com/respond/1.4.2/respond.min.js') }}"></script>
-        <![endif]-->
-
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
-
 <body class="nav-md">
-
   <div class="container body">
-
-
     <div class="main_container">
-
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
 
@@ -145,7 +140,7 @@
 
                   </ul>
                 </li>
-                <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
               </ul>
             </div>
 
@@ -180,13 +175,17 @@
               <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
 
+            <div class="nav toggle">
+              <a href="/admin">Site</a>
+            </div>
+
             <ul class="nav navbar-nav navbar-right">
               <li role="presentation" class="dropdown">
                 <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                   <i class="fa fa-envelope-o"></i>
                   <span class="caret"></span>
                 </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                   <li>
                     <a>
                       <span class="image">
@@ -269,17 +268,10 @@
             </ul>
           </nav>
         </div>
-
       </div>
       <div class="clearfix"></div>
       <!-- /top navigation -->
-
-      <!-- page content -->
-
-      <!-- /page content -->
     </div>
-
-    <!-- footer content -->
   </div>
 
   <div id="custom_notifications" class="custom-notifications dsp_none">

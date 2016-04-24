@@ -95,6 +95,7 @@ class DefaultControllerTest extends WebTestCase
             ['template/glyphicons', 200],
             ['template/widgets', 200],
             ['template/invoice', 200],
+            ['template/level2', 200],
             ['template/inbox', 200],
             ['template/calendar', 200],
             ['template/tables', 200],
@@ -103,9 +104,11 @@ class DefaultControllerTest extends WebTestCase
             ['template/chartjs2', 200],
             ['template/morisjs', 200],
             ['template/echarts', 200],
+            ['template/empty', 200],
             ['template/other_charts', 200],
             ['template/e_commerce', 200],
             ['template/projects', 200],
+            ['template/sign_up', 200],
             ['template/project_detail', 200],
             ['template/contacts', 200],
             ['template/profile', 200],
@@ -113,6 +116,7 @@ class DefaultControllerTest extends WebTestCase
             ['template/page_500', 200],
             ['template/plain_page', 200],
             ['template/login', 200],
+            ['template/map', 200],
             ['template/pricing_tables', 200],
             ['template/login', 200],
             ['template/undefined', 404],
@@ -162,6 +166,7 @@ class DefaultControllerTest extends WebTestCase
             ['admin/login', 200],
             ['admin/pricing_tables', 200],
             ['admin/login', 200],
+            ['admin/map', 200],
         ];
     }
 }
