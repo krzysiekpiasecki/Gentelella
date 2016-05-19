@@ -10,27 +10,27 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * Template homepage.
+     * Render Gentelella page
      *
-     * @Route("template/{name}", name="template", defaults={"name": "index"})
+     * @Route("gentelella/{page}", name="gentelella_page", defaults={"page": "index"})
      *
      * @param Request $request
-     * @param string  $name
+     * @param string  $page
      *
      * @return Response
      */
-    public function templateAction(Request $request, $name)
+    public function templateAction(Request $request, $page)
     {
-        if (!$this->get('templating')->exists(sprintf('template/%s.html.twig', $name))) {
+        if (!$this->get('templating')->exists(sprintf('gentelella/%s.html.twig', $page))) {
             throw $this->createNotFoundException(
                 sprintf(
-                    'Page %s not found',
-                    $name
+                    'Page "%s" not found',
+                    $page
                 )
             );
         }
 
-        return $this->render(sprintf('template/%s.html.twig', $name));
+        return $this->render(sprintf('gentelella/%s.html.twig', $page));
     }
 
     /**

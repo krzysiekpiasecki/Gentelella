@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -10,61 +9,44 @@
 
     <title>Gentallela Alela! | </title>
 
+    <!-- Bootstrap -->
+    <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     {% block stylesheets %}
-        <!-- Bootstrap core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('fonts/css/font-awesome.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
-        <!-- Custom styling plus plugins -->
-        <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/icheck/flat/green.css') }}" rel="stylesheet">
+
     {% endblock %}
 
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <!--[if lt IE 9]>
-    <script src="{{ asset('../assets/js/ie8-responsive-file-warning.js') }}"></script>
-    <![endif]-->
+    <!-- Custom Theme Style -->
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body class="nav-md">
 
-    <div class="container body">
-        <div class="main_container">
-            {% include "sidebar.html.twig" %}
-            {% include "topnav.html.twig" %}
-            <!-- page content -->
-            <div class="right_col" role="main">
-                {% block body %}{% endblock %}
-                {% include "footer.html.twig" %}
-            </div>
-            <!-- /page content -->
-        </div>
+<div class="container body">
+    <div class="main_container">
+        {% include 'sidebar.html.twig' %}
+        {% include 'topnav.html.twig' %}
+        <div class="right_col" role="main">{% block page_content %}{% endblock %}</div>
+        {% include 'footer.html.twig' %}
     </div>
+</div>
 
-    <div id="custom_notifications" class="custom-notifications dsp_none">
-        <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-        </ul>
-        <div class="clearfix"></div>
-        <div id="notif-group" class="tabbed_notifications"></div>
-    </div>
+<!-- jQuery -->
+<script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- FastClick -->
+<script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
+<!-- NProgress -->
+<script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+{% block javascripts %}
 
-    {% block javascripts %}
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <!-- bootstrap progress js -->
-        <script src="{{ asset('js/progressbar/bootstrap-progressbar.min.js') }}"></script>
-        <!-- icheck -->
-        <script src="{{ asset('js/icheck/icheck.min.js') }}"></script>
-        <script src="{{ asset('js/custom.js') }}"></script>
-        <!-- pace -->
-        <script src="{{ asset('js/pace/pace.min.js') }}"></script>
-    {% endblock %}
+{% endblock %}
+
+<!-- Custom Theme Scripts -->
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 </body>
-
 </html>
