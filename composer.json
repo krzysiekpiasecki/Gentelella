@@ -1,5 +1,6 @@
 {
     "name": "krzysiekpiasecki/gentelella",
+    "description": "Gentelella Admin theme is a free to use Bootstrap admin template developed and maintained by Colorlib and Aigars Silkalns integrated into Symfony 3.x full stack framework"
     "license": "proprietary",
     "type": "project",
     "autoload": {
