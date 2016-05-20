@@ -10,7 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class DefaultControllerTest extends WebTestCase
 {
     /**
-     * Redirect to admin homepage with '/'
+     * Redirect to admin homepage with '/'.
+     *
      * @covers ::redirectAction
      */
     public function testRedirectToAdminHomepage()
