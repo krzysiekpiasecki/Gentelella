@@ -10,52 +10,57 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class DefaultControllerTest extends WebTestCase
 {
     /**
-     * Test switching between template and admin pages.
-     */
-    public function testSwitchToTemplate()
-    {
-        $client = static::createClient();
-        $crawler = $client->request('GET', 'admin/index');
-
-        $link = $crawler
-            ->filter('a:contains("Template")')
-            ->eq(0)
-            ->link();
-
-        $crawler = $client->click($link);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
-        $link = $crawler
-            ->filter('a:contains("Site")')
-            ->eq(0)
-            ->link();
-
-        $crawler = $client->click($link);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-    }
-
-    /**
      * @covers ::redirectAction
      */
-    public function testRedirect()
+    public function testRedirectToAdminHomepage()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/');
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertSame(
+            'Redirecting to /admin',
+            $crawler
+                ->filter('title')
+                ->eq(0)
+                ->text()
+        );
     }
 
     /**
-     * @dataProvider templatePages
-     * @covers ::templateAction
+     * @dataProvider gentelellaPages
+     * @covers ::gentelellaAction
      *
      * @param string $path
-     * @param int    $statusCode
      */
-    public function testTemplate($path, $statusCode)
+    public function testGentellelaPages($path)
     {
         $client = static::createClient();
         $crawler = $client->request('GET', sprintf('/%s', $path));
-        $this->assertEquals($statusCode, $client->getResponse()->getStatusCode());
+        $this->assertTrue($client->getResponse()->getStatusCode() === 200);
+    }
+
+    /**
+     * @dataProvider gentelellaSwitchablePages
+     * @covers ::gentelellaAction
+     *
+     * @param string $path
+     */
+    public function testBackIntoTheApp($path)
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', sprintf('/%s', $path));
+
+        $link = $crawler
+            ->filter('a:contains("Back to the application")')
+            ->eq(0)
+            ->link();
+
+        $crawler = $client->click($link);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertSame(
+            'Template preview',
+            $crawler->filter('a:contains("Template preview")')->eq(0)->text()
+        );
     }
 
     /**
@@ -63,63 +68,131 @@ class DefaultControllerTest extends WebTestCase
      * @covers ::adminAction
      *
      * @param string $path
-     * @param int    $statusCode
      */
-    public function testAdmin($path, $statusCode)
+    public function testAdminPages($path)
     {
         $client = static::createClient();
         $crawler = $client->request('GET', sprintf('/%s', $path));
-        $this->assertEquals($statusCode, $client->getResponse()->getStatusCode());
+        $this->assertTrue($client->getResponse()->getStatusCode() === 200);
+    }
+
+    /**
+     * @dataProvider adminPages
+     * @covers ::adminAction
+     *
+     * @param string $path
+     */
+    public function testGoIntoTemplate($path)
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', sprintf('/%s', $path));
+
+        $link = $crawler
+            ->filter('a:contains("Template preview")')
+            ->eq(0)
+            ->link();
+
+        $crawler = $client->click($link);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertSame(
+            'Back to the application',
+            $crawler->filter('a:contains("Back to the application")')->eq(0)->text()
+        );
     }
 
     /**
      * @return array
      */
-    public function templatePages()
+    public function gentelellaPages()
     {
         return [
-            ['gentelella', 200],
-            ['gentelella/calendar', 200],
-            ['gentelella/chartjs', 200],
-            ['gentelella/chartjs2', 200],
-            ['gentelella/contacts', 200],
-            ['gentelella/e_commerce', 200],
-            ['gentelella/echarts', 200],
-            ['gentelella/fixed_sidebar', 200],
-            ['gentelella/form', 200],
-            ['gentelella/form_advanced', 200],
-            ['gentelella/form_buttons', 200],
-            ['gentelella/form_upload', 200],
-            ['gentelella/form_validation', 200],
-            ['gentelella/form_wizards', 200],
-            ['gentelella/general_elements', 200],
-            ['gentelella/glyphicons', 200],
-            ['gentelella/icons', 200],
-            ['gentelella/inbox', 200],
-            ['gentelella/index', 200],
-            ['gentelella/index2', 200],
-            ['gentelella/index3', 200],
-            ['gentelella/invoice', 200],
-            ['gentelella/level2', 200],
-            ['gentelella/login', 200],
-            ['gentelella/map', 200],
-            ['gentelella/media_gallery', 200],
-            ['gentelella/morisjs', 200],
-            ['gentelella/other_charts', 200],
-            ['gentelella/page_404', 200],
-            ['gentelella/page_500', 200],
-            ['gentelella/plain_page', 200],
-            ['gentelella/pricing_tables', 200],
-            ['gentelella/profile', 200],
-            ['gentelella/project_detail', 200],
-            ['gentelella/projects', 200],
-            ['gentelella/sign_up', 200],
-            ['gentelella/tables', 200],
-            ['gentelella/tables_dynamic', 200],
-            ['gentelella/typography', 200],
-            ['gentelella/widgets', 200],
-            ['gentelella/xx', 200],
-            ['gentelella/undefined', 404],
+            ['gentelella'],
+            ['gentelella/calendar'],
+            ['gentelella/chartjs'],
+            ['gentelella/chartjs2'],
+            ['gentelella/contacts'],
+            ['gentelella/e_commerce'],
+            ['gentelella/echarts'],
+            ['gentelella/fixed_sidebar'],
+            ['gentelella/form'],
+            ['gentelella/form_advanced'],
+            ['gentelella/form_buttons'],
+            ['gentelella/form_upload'],
+            ['gentelella/form_validation'],
+            ['gentelella/form_wizards'],
+            ['gentelella/general_elements'],
+            ['gentelella/glyphicons'],
+            ['gentelella/icons'],
+            ['gentelella/inbox'],
+            ['gentelella/index'],
+            ['gentelella/index2'],
+            ['gentelella/index3'],
+            ['gentelella/invoice'],
+            ['gentelella/level2'],
+            ['gentelella/login'],
+            ['gentelella/map'],
+            ['gentelella/media_gallery'],
+            ['gentelella/morisjs'],
+            ['gentelella/other_charts'],
+            ['gentelella/page_404'],
+            ['gentelella/page_500'],
+            ['gentelella/plain_page'],
+            ['gentelella/pricing_tables'],
+            ['gentelella/profile'],
+            ['gentelella/project_detail'],
+            ['gentelella/projects'],
+            ['gentelella/sign_up'],
+            ['gentelella/tables'],
+            ['gentelella/tables_dynamic'],
+            ['gentelella/typography'],
+            ['gentelella/widgets'],
+            ['gentelella/xx'],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function gentelellaSwitchablePages()
+    {
+        return [
+            ['gentelella'],
+            ['gentelella/calendar'],
+            ['gentelella/chartjs'],
+            ['gentelella/chartjs2'],
+            ['gentelella/contacts'],
+            ['gentelella/e_commerce'],
+            ['gentelella/echarts'],
+            ['gentelella/fixed_sidebar'],
+            ['gentelella/form'],
+            ['gentelella/form_advanced'],
+            ['gentelella/form_buttons'],
+            ['gentelella/form_upload'],
+            ['gentelella/form_validation'],
+            ['gentelella/form_wizards'],
+            ['gentelella/general_elements'],
+            ['gentelella/glyphicons'],
+            ['gentelella/icons'],
+            ['gentelella/inbox'],
+            ['gentelella/index'],
+            ['gentelella/index2'],
+            ['gentelella/index3'],
+            ['gentelella/invoice'],
+            ['gentelella/level2'],
+            ['gentelella/map'],
+            ['gentelella/media_gallery'],
+            ['gentelella/morisjs'],
+            ['gentelella/other_charts'],
+            ['gentelella/plain_page'],
+            ['gentelella/pricing_tables'],
+            ['gentelella/profile'],
+            ['gentelella/project_detail'],
+            ['gentelella/projects'],
+            ['gentelella/sign_up'],
+            ['gentelella/tables'],
+            ['gentelella/tables_dynamic'],
+            ['gentelella/typography'],
+            ['gentelella/widgets'],
         ];
     }
 
@@ -129,48 +202,47 @@ class DefaultControllerTest extends WebTestCase
     public function adminPages()
     {
         return [
-            ['admin', 200],
-            ['admin/calendar', 200],
-            ['admin/chartjs', 200],
-            ['admin/chartjs2', 200],
-            ['admin/contacts', 200],
-            ['admin/e_commerce', 200],
-            ['admin/echarts', 200],
-            ['admin/fixed_sidebar', 200],
-            ['admin/form', 200],
-            ['admin/form_advanced', 200],
-            ['admin/form_buttons', 200],
-            ['admin/form_upload', 200],
-            ['admin/form_validation', 200],
-            ['admin/form_wizards', 200],
-            ['admin/general_elements', 200],
-            ['admin/glyphicons', 200],
-            ['admin/icons', 200],
-            ['admin/inbox', 200],
-            ['admin/index', 200],
-            ['admin/index2', 200],
-            ['admin/index3', 200],
-            ['admin/invoice', 200],
-            ['admin/level2', 200],
-            ['admin/login', 200],
-            ['admin/map', 200],
-            ['admin/media_gallery', 200],
-            ['admin/morisjs', 200],
-            ['admin/other_charts', 200],
-            ['admin/page_404', 200],
-            ['admin/page_500', 200],
-            ['admin/plain_page', 200],
-            ['admin/pricing_tables', 200],
-            ['admin/profile', 200],
-            ['admin/project_detail', 200],
-            ['admin/projects', 200],
-            ['admin/sign_up', 200],
-            ['admin/tables', 200],
-            ['admin/tables_dynamic', 200],
-            ['admin/typography', 200],
-            ['admin/widgets', 200],
-            ['admin/xx', 200],
-            ['admin/undefined', 404],
+            ['admin'],
+            ['admin/calendar'],
+            ['admin/chartjs'],
+            ['admin/chartjs2'],
+            ['admin/contacts'],
+            ['admin/e_commerce'],
+            ['admin/echarts'],
+            ['admin/fixed_sidebar'],
+            ['admin/form'],
+            ['admin/form_advanced'],
+            ['admin/form_buttons'],
+            ['admin/form_upload'],
+            ['admin/form_validation'],
+            ['admin/form_wizards'],
+            ['admin/general_elements'],
+            ['admin/glyphicons'],
+            ['admin/icons'],
+            ['admin/inbox'],
+            ['admin/index'],
+            ['admin/index2'],
+            ['admin/index3'],
+            ['admin/invoice'],
+            ['admin/level2'],
+            ['admin/login'],
+            ['admin/map'],
+            ['admin/media_gallery'],
+            ['admin/morisjs'],
+            ['admin/other_charts'],
+            ['admin/page_404'],
+            ['admin/page_500'],
+            ['admin/plain_page'],
+            ['admin/pricing_tables'],
+            ['admin/profile'],
+            ['admin/project_detail'],
+            ['admin/projects'],
+            ['admin/sign_up'],
+            ['admin/tables'],
+            ['admin/tables_dynamic'],
+            ['admin/typography'],
+            ['admin/widgets'],
+            ['admin/xx'],
         ];
     }
 }

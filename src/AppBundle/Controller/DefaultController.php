@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * Render Gentelella page
+     * Render Gentelella page.
      *
      * @Route("gentelella/{page}", name="gentelella_page", defaults={"page": "index"})
      *
@@ -19,7 +19,7 @@ class DefaultController extends Controller
      *
      * @return Response
      */
-    public function templateAction(Request $request, $page)
+    public function gentelellaAction(Request $request, $page)
     {
         /* @todo Secure it! */
         if (!$this->get('templating')->exists(sprintf('gentelella/%s.html.twig', $page))) {
@@ -35,28 +35,30 @@ class DefaultController extends Controller
     }
 
     /**
-     * Display admin pages
+     * Display admin pages.
      *
-     * @Route("admin/{page}", name="admin_page", defaults={"page": "plain"})
+     * @Route("admin/{page}", name="admin_page", defaults={"page": "index"})
      *
      * @param Request $request Request
-     * @param string  $page Page name
+     * @param string  $page    Page name
      *
      * @return Response
      */
-    public function adminAction(Request $request, $page = 'plain')
+    public function adminAction(Request $request, $page = 'index')
     {
         /* @todo Secure it! */
-        if (!$this->get('templating')->exists(sprintf('admin/%s.html.twig', $page))) {
+        if (!$this->get('templating')->exists(sprintf('admin/pages/%s.html.twig', $page))) {
             $page = 'plain';
         }
+
         return $this->render(sprintf('admin/pages/%s.html.twig', $page));
     }
 
     /**
-     * Redirect to admin homepage which is currently index
+     * Redirect to admin homepage which is currently index.
      *
      * @Route("/", name="homepage")
+     *
      * @param Request $request Request
      */
     public function homePageAction(Request $request)
