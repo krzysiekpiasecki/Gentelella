@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class DefaultControllerTest extends WebTestCase
 {
     /**
+     * Redirect to admin homepage with '/'
      * @covers ::redirectAction
      */
     public function testRedirectToAdminHomepage()
@@ -23,6 +24,25 @@ class DefaultControllerTest extends WebTestCase
                 ->filter('title')
                 ->text()
         );
+    }
+
+    /**
+     * @dataProvider gentelellaPages
+     * @covers ::gentelellaAction
+     */
+    public function testGentelellaHompePage()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/gentelella/index');
+
+        $link = $crawler
+            ->filter('a.site_title')
+            ->link();
+
+        $crawler = $client->click($link);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertContains('Network Activities', $crawler->html());
+        $this->assertContains('Back to the application', $crawler->html());
     }
 
     /**
@@ -59,6 +79,25 @@ class DefaultControllerTest extends WebTestCase
             'Template preview',
             $crawler->filter('a:contains("Template preview")')->eq(0)->text()
         );
+    }
+
+    /**
+     * @dataProvider adminPages
+     * @covers ::gentelellaAction
+     */
+    public function testAdminHompePage()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/admin/index');
+
+        $link = $crawler
+            ->filter('a.site_title')
+            ->link();
+
+        $crawler = $client->click($link);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertContains('Network Activities', $crawler->html());
+        $this->assertContains('Template preview', $crawler->html());
     }
 
     /**
