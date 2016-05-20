@@ -21,7 +21,6 @@ class DefaultControllerTest extends WebTestCase
             'Redirecting to /admin',
             $crawler
                 ->filter('title')
-                ->eq(0)
                 ->text()
         );
     }
@@ -52,7 +51,6 @@ class DefaultControllerTest extends WebTestCase
 
         $link = $crawler
             ->filter('a:contains("Back to the application")')
-            ->eq(0)
             ->link();
 
         $crawler = $client->click($link);
