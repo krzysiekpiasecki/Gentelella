@@ -77,6 +77,23 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * @dataProvider adminBlankPages
+     * @covers ::adminAction
+     *
+     * @param string $path
+     */
+    public function testBlankPages($path)
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', sprintf('/%s', $path));
+        $this->assertTrue($client->getResponse()->getStatusCode() === 200);
+        $this->assertSame(
+            'Plain Page',
+            $crawler->filter('h3:contains("Plain Page")')->text()
+        );
+    }
+
+    /**
      * @dataProvider adminPages
      * @covers ::adminAction
      *
@@ -221,6 +238,54 @@ class DefaultControllerTest extends WebTestCase
             ['admin/icons'],
             ['admin/inbox'],
             ['admin/index'],
+            ['admin/index2'],
+            ['admin/index3'],
+            ['admin/invoice'],
+            ['admin/level2'],
+            ['admin/login'],
+            ['admin/map'],
+            ['admin/media_gallery'],
+            ['admin/morisjs'],
+            ['admin/other_charts'],
+            ['admin/page_404'],
+            ['admin/page_500'],
+            ['admin/plain_page'],
+            ['admin/pricing_tables'],
+            ['admin/profile'],
+            ['admin/project_detail'],
+            ['admin/projects'],
+            ['admin/sign_up'],
+            ['admin/tables'],
+            ['admin/tables_dynamic'],
+            ['admin/typography'],
+            ['admin/widgets'],
+            ['admin/xx'],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function adminBlankPages()
+    {
+        return [
+            ['admin/calendar'],
+            ['admin/chartjs'],
+            ['admin/chartjs2'],
+            ['admin/contacts'],
+            ['admin/e_commerce'],
+            ['admin/echarts'],
+            ['admin/fixed_sidebar'],
+            ['admin/form'],
+            ['admin/form_advanced'],
+            ['admin/form_buttons'],
+            ['admin/form_upload'],
+            ['admin/form_validation'],
+            ['admin/form_wizards'],
+            ['admin/general_elements'],
+            ['admin/glyphicons'],
+            ['admin/icons'],
+            ['admin/inbox'],
             ['admin/index2'],
             ['admin/index3'],
             ['admin/invoice'],
