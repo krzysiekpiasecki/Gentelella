@@ -21,6 +21,7 @@ class DefaultController extends Controller
      */
     public function templateAction(Request $request, $page)
     {
+        /* @todo Secure it! */
         if (!$this->get('templating')->exists(sprintf('gentelella/%s.html.twig', $page))) {
             throw $this->createNotFoundException(
                 sprintf(
@@ -34,33 +35,32 @@ class DefaultController extends Controller
     }
 
     /**
-     * Admin homepage.
+     * Display admin pages
      *
-     * @Route("admin/{name}", name="admin_homepage", defaults={"name": "index"})
+     * @Route("admin/{page}", name="admin_page", defaults={"page": "plain"})
      *
-     * @param Request $request
-     * @param string  $name
+     * @param Request $request Request
+     * @param string  $page Page name
      *
      * @return Response
      */
-    public function adminAction(Request $request, $name)
+    public function adminAction(Request $request, $page = 'plain')
     {
-        if (!$this->get('templating')->exists(sprintf('%s.html.twig', $name))) {
-            $name = 'index';
+        /* @todo Secure it! */
+        if (!$this->get('templating')->exists(sprintf('admin/%s.html.twig', $page))) {
+            $page = 'plain';
         }
-
-        return $this->render(sprintf('%s.html.twig', $name));
+        return $this->render(sprintf('admin/pages/%s.html.twig', $page));
     }
 
     /**
-     * Redirect to admin homepage.
+     * Redirect to admin homepage which is currently index
      *
      * @Route("/", name="homepage")
+     * @param Request $request Request
      */
-    public function redirectAction(Request $request)
+    public function homePageAction(Request $request)
     {
-        return $this->redirectToRoute('admin_homepage', [
-            'name' => 'index',
-        ]);
+        return $this->redirectToRoute('admin_page', ['page' => 'index']);
     }
 }
