@@ -35,7 +35,7 @@ class DefaultControllerTest extends WebTestCase
     public function testGentellelaPages($path)
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', sprintf('/%s', $path));
+        $crawler = $client->request('GET', sprintf('%s', $path));
         $this->assertTrue($client->getResponse()->getStatusCode() === 200);
     }
 
@@ -48,7 +48,7 @@ class DefaultControllerTest extends WebTestCase
     public function testBackIntoTheApp($path)
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', sprintf('/%s', $path));
+        $crawler = $client->request('GET', sprintf('%s', $path));
 
         $link = $crawler
             ->filter('a:contains("Back to the application")')
@@ -72,7 +72,7 @@ class DefaultControllerTest extends WebTestCase
     public function testAdminPages($path)
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', sprintf('/%s', $path));
+        $crawler = $client->request('GET', sprintf('%s', $path));
         $this->assertTrue($client->getResponse()->getStatusCode() === 200);
     }
 
@@ -85,7 +85,7 @@ class DefaultControllerTest extends WebTestCase
     public function testBlankPages($path)
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', sprintf('/%s', $path));
+        $crawler = $client->request('GET', sprintf('%s', $path));
         $this->assertTrue($client->getResponse()->getStatusCode() === 200);
         $this->assertSame(
             'Plain Page',
