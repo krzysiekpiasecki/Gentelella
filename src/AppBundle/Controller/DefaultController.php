@@ -60,6 +60,8 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      *
      * @param Request $request Request
+     *
+     * @return Request
      */
     public function homePageAction(Request $request)
     {
