@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * For the full copyright and license information, please view the LICENSE file
+ * that was distributed with this source code.
+ */
+
 namespace tests\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -10,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class DefaultControllerTest extends WebTestCase
 {
     /**
-     * Redirect to admin homepage with '/'.
+     * Redirect to admin homepage with route '/'.
      *
      * @covers ::redirectAction
      */
@@ -28,6 +33,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * Test clicking 'logo' on all Gentelella pages.
+     *
      * @dataProvider gentelellaPages
      * @covers ::gentelellaAction
      */
@@ -47,6 +54,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * Smoke test for all Gentelella pages.
+     *
      * @dataProvider gentelellaPages
      * @covers ::gentelellaAction
      *
@@ -60,6 +69,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * Test button 'Back to the application' on all Gentelella pages.
+     *
      * @dataProvider gentelellaSwitchablePages
      * @covers ::gentelellaAction
      *
@@ -83,6 +94,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * Test clicking 'logo' on all Admin pages.
+     *
      * @dataProvider adminPages
      * @covers ::gentelellaAction
      */
@@ -102,6 +115,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
+     * Smoke test for all Admin pages.
+     *
      * @dataProvider adminPages
      * @covers ::adminAction
      *
@@ -115,23 +130,8 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
-     * @dataProvider adminBlankPages
-     * @covers ::adminAction
+     * Test button 'Template preview' on all Admin pages.
      *
-     * @param string $path
-     */
-    public function testBlankPages($path)
-    {
-        $client = static::createClient();
-        $crawler = $client->request('GET', sprintf('%s', $path));
-        $this->assertTrue($client->getResponse()->getStatusCode() === 200);
-        $this->assertSame(
-            'Plain Page',
-            $crawler->filter('h3:contains("Plain Page")')->text()
-        );
-    }
-
-    /**
      * @dataProvider adminPages
      * @covers ::adminAction
      *
@@ -155,6 +155,24 @@ class DefaultControllerTest extends WebTestCase
         );
     }
 
+    /**
+     * Test blank page for all admin pages.
+     *
+     * @dataProvider adminBlankPages
+     * @covers ::adminAction
+     *
+     * @param string $path
+     */
+    public function testBlankPages($path)
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', sprintf('%s', $path));
+        $this->assertTrue($client->getResponse()->getStatusCode() === 200);
+        $this->assertSame(
+            'Plain Page',
+            $crawler->filter('h3:contains("Plain Page")')->text()
+        );
+    }
     /**
      * @return array
      */

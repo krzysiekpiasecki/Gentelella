@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * For the full copyright and license information, please view the LICENSE file
+ * that was distributed with this source code.
+ */
+
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -21,8 +26,11 @@ class DefaultController extends Controller
      */
     public function gentelellaAction(Request $request, $page)
     {
-        /* @todo Secure it! */
-        if (!$this->get('templating')->exists(sprintf('gentelella/%s.html.twig', $page))) {
+        $templateName = basename(sprintf('gentelella/%s.html.twig', $page));
+        if ($templateName !== sprintf('%s.html.twig', $page)) {
+            throw $this->createNotFoundException('Page not found');
+        }
+        if (!$this->get('templating')->exists(sprintf('gentelella/%s', $templateName))) {
             throw $this->createNotFoundException(
                 sprintf(
                     'Page "%s" not found',
@@ -35,7 +43,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Display admin pages.
+     * Render admin page.
      *
      * @Route("admin/{page}", name="admin_page", defaults={"page": "index"})
      *
@@ -46,12 +54,15 @@ class DefaultController extends Controller
      */
     public function adminAction(Request $request, $page = 'index')
     {
-        /* @todo Secure it! */
-        if (!$this->get('templating')->exists(sprintf('admin/pages/%s.html.twig', $page))) {
-            $page = 'plain';
+        $templateName = basename(sprintf('admin/pages/%s.html.twig', $page));
+        if ($templateName !== sprintf('%s.html.twig', $page)) {
+            throw $this->createNotFoundException('Page not found');
+        }
+        if (!$this->get('templating')->exists(sprintf('admin/pages/%s', $templateName))) {
+            $templateName = 'plain.html.twig';
         }
 
-        return $this->render(sprintf('admin/pages/%s.html.twig', $page));
+        return $this->render(sprintf('admin/pages/%s', $templateName));
     }
 
     /**
