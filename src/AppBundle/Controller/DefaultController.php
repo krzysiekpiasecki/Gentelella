@@ -45,14 +45,14 @@ class DefaultController extends Controller
     /**
      * Render admin page.
      *
-     * @Route("admin/{page}", name="admin_page", defaults={"page": "index"})
+     * @Route("admin/{page}", name="admin_page", defaults={"page": "plain"})
      *
      * @param Request $request Request
      * @param string  $page    Page name
      *
      * @return Response
      */
-    public function adminAction(Request $request, $page = 'index')
+    public function adminAction(Request $request, $page = 'plain')
     {
         $templateName = basename(sprintf('admin/pages/%s.html.twig', $page));
         if ($templateName !== sprintf('%s.html.twig', $page)) {
@@ -66,7 +66,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Redirect to admin homepage which is currently index.
+     * Redirect to admin homepage which is currently index (plain page).
      *
      * @Route("/", name="homepage")
      *

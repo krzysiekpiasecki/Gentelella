@@ -25,7 +25,7 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertSame(
-            'Redirecting to /admin',
+            'Redirecting to /admin/index',
             $crawler
                 ->filter('title')
                 ->text()
@@ -110,8 +110,11 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Network Activities', $crawler->html());
-        $this->assertContains('Template preview', $crawler->html());
+        $this->assertSame('Plain Page', $crawler->filter('div.right_col h3')->text());
+        $this->assertContains(
+            'Template preview',
+            $crawler->filter('div.top_nav a:contains("Template preview")')->text()
+        );
     }
 
     /**
