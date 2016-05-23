@@ -29,6 +29,7 @@
               <!-- Target: update                                -->
               <!-- ============================================  -->
               <target name="update" depends="build">
-              <echo msg="Nothing to do ..." />
+              <echo msg="Updating assets via Bower manager ... Wait for a moment" />
+              <exec command="bower update" />
               </target>
 </project>
