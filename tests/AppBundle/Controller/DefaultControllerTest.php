@@ -88,8 +88,8 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertSame(
-            'Template preview',
-            $crawler->filter('a:contains("Template preview")')->eq(0)->text()
+            'Gentelella',
+            $crawler->filter('a:contains("Gentelella")')->eq(0)->text()
         );
     }
 
@@ -110,10 +110,10 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertSame('Plain Page', $crawler->filter('div.right_col h3')->text());
+        $this->assertSame('Plain page', $crawler->filter('div.right_col h3')->text());
         $this->assertContains(
-            'Template preview',
-            $crawler->filter('div.top_nav a:contains("Template preview")')->text()
+            'Gentelella',
+            $crawler->filter('div.top_nav a:contains("Gentelella")')->text()
         );
     }
 
@@ -133,7 +133,7 @@ class DefaultControllerTest extends WebTestCase
     }
 
     /**
-     * Test button 'Template preview' on all Admin pages.
+     * Test button 'Gentelella' on all Admin pages.
      *
      * @dataProvider adminPages
      * @covers ::adminAction
@@ -146,7 +146,7 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', sprintf('/%s', $path));
 
         $link = $crawler
-            ->filter('a:contains("Template preview")')
+            ->filter('a:contains("Gentelella")')
             ->eq(0)
             ->link();
 
@@ -172,8 +172,8 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', sprintf('%s', $path));
         $this->assertTrue($client->getResponse()->getStatusCode() === 200);
         $this->assertSame(
-            'Plain Page',
-            $crawler->filter('h3:contains("Plain Page")')->text()
+            'Plain page',
+            $crawler->filter('h3:contains("Plain page")')->text()
         );
     }
     /**

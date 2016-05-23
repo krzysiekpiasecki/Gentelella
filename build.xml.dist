@@ -21,15 +21,17 @@
               <!-- Target: install                               -->
               <!-- ============================================  -->
               <target name="install" depends="build">
-              <echo msg="Installing assets via Bower manager ... Wait for a moment" />
+              <echo msg="Installing assets ... Wait for a moment" />
               <exec command="bower install" />
+              <echo msg="Done ..." />
               </target>
 
               <!-- ============================================  -->
               <!-- Target: update                                -->
               <!-- ============================================  -->
               <target name="update" depends="build">
-              <echo msg="Updating assets via Bower manager ... Wait for a moment" />
+              <echo msg="Updating assets ... Wait for a moment" />
               <exec command="bower update" />
+              <echo msg="Done ..." />
               </target>
 </project>
