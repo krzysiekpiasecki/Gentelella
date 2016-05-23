@@ -21,6 +21,8 @@
               <!-- Target: install                               -->
               <!-- ============================================  -->
               <target name="install" depends="build">
+              <echo msg="Installing PHP libraries via Composer manager ... Wait for a moment" />
+              <exec command="composer install" />
               <echo msg="Installing assets via Bower manager ... Wait for a moment" />
               <exec command="bower install" />
               </target>
@@ -29,6 +31,9 @@
               <!-- Target: update                                -->
               <!-- ============================================  -->
               <target name="update" depends="build">
-              <echo msg="Nothing to do ..." />
+              <echo msg="Updating PHP libraries via Composer manager ... Wait for a moment" />
+              <exec command="composer update" />
+              <echo msg="Updating assets via Bower manager ... Wait for a moment" />
+              <exec command="bower update" />
               </target>
 </project>
