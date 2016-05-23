@@ -6,6 +6,7 @@
               <!-- Target: prepare                               -->
               <!-- ============================================  -->
               <target name="prepare">
+              <echo msg="Nothing to do ..." />
               </target>
 
 
@@ -13,20 +14,21 @@
               <!-- Target: build                                 -->
               <!-- ============================================  -->
               <target name="build" depends="prepare">
+              <echo msg="Nothing to do ..." />
               </target>
 
               <!-- ============================================  -->
               <!-- Target: install                               -->
               <!-- ============================================  -->
               <target name="install" depends="build">
-                  <echo msg="Installing assets via Bower manager ... Wait for a moment" />
-                  <exec command="bower install" />
+              <echo msg="Installing assets via Bower manager ... Wait for a moment" />
+              <exec command="bower install" />
               </target>
 
-            <!-- ============================================  -->
-            <!-- Target: update                                -->
-            <!-- ============================================  -->
-            <target name="update" depends="build">
-
-            </target>
+              <!-- ============================================  -->
+              <!-- Target: update                                -->
+              <!-- ============================================  -->
+              <target name="update" depends="build">
+              <echo msg="Nothing to do ..." />
+              </target>
 </project>
