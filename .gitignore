@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /build/
+build.xml
 /phpunit.xml
 /var/*
 !/var/cache
@@ -15,4 +16,5 @@
 /vendor/
 /web/bundles/
 /web/assets/vendors
+
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Gentelella" default="install">
+
+              <!-- ============================================  -->
+              <!-- Target: prepare                               -->
+              <!-- ============================================  -->
+              <target name="prepare">
+              </target>
+
+
+              <!-- ============================================  -->
+              <!-- Target: build                                 -->
+              <!-- ============================================  -->
+              <target name="build" depends="prepare">
+              </target>
+
+              <!-- ============================================  -->
+              <!-- Target: install                               -->
+              <!-- ============================================  -->
+              <target name="install" depends="build">
+                  <echo msg="Installing assets via Bower manager ... Wait for a moment" />
+                  <exec command="bower install" />
+              </target>
+
+            <!-- ============================================  -->
+            <!-- Target: update                                -->
+            <!-- ============================================  -->
+            <target name="update" depends="build">
+
+            </target>
+</project>
