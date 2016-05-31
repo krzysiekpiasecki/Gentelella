@@ -18,7 +18,7 @@
     <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     
     <!-- Custom Theme Style -->
-    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -53,78 +53,53 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'index'}) }}">Dashboard</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'index2'}) }}">Dashboard2</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'index3'}) }}">Dashboard3</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'index'}) }}">Dashboard</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'index2'}) }}">Dashboard2</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'index3'}) }}">Dashboard3</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'form'}) }}">General Form</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'form_advanced'}) }}">Advanced Components</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'form_validation'}) }}">Form Validation</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'form_wizards'}) }}">Form Wizard</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'form_upload'}) }}">Form Upload</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'form_buttons'}) }}">Form Buttons</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form'}) }}">General Form</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form_advanced'}) }}">Advanced Components</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form_validation'}) }}">Form Validation</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form_wizards'}) }}">Form Wizard</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form_upload'}) }}">Form Upload</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'form_buttons'}) }}">Form Buttons</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'general_elements'}) }}">General Elements</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'media_gallery'}) }}">Media Gallery</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'typography'}) }}">Typography</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'icons'}) }}">Icons</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'glyphicons'}) }}">Glyphicons</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'widgets'}) }}">Widgets</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'invoice'}) }}">Invoice</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'inbox'}) }}">Inbox</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'calendar'}) }}">Calendar</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'general_elements'}) }}">General Elements</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'media_gallery'}) }}">Media Gallery</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'typography'}) }}">Typography</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'icons'}) }}">Icons</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'glyphicons'}) }}">Glyphicons</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'widgets'}) }}">Widgets</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'invoice'}) }}">Invoice</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'inbox'}) }}">Inbox</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'calendar'}) }}">Calendar</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'tables'}) }}">Tables</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'tables_dynamic'}) }}">Table Dynamic</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'tables'}) }}">Tables</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'tables_dynamic'}) }}">Table Dynamic</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'chartjs'}) }}">Chart JS</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'chartjs2'}) }}">Chart JS2</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'morisjs'}) }}">Moris JS</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'echarts'}) }}">ECharts </a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'other_charts'}) }}">Other Charts </a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'chartjs'}) }}">Chart JS</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'chartjs2'}) }}">Chart JS2</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'morisjs'}) }}">Moris JS</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'echarts'}) }}">ECharts</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'other_charts'}) }}">Other Charts</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'fixed_sidebar'}) }}">Fixed Sidebar</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'fixed_sidebar'}) }}">Fixed Sidebar</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'fixed_footer'}) }}">Fixed Footer</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -134,30 +109,21 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'e_commerce'}) }}">E-commerce</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'projects'}) }}">Projects</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'project_detail'}) }}">Project Detail</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'contacts'}) }}">Contacts</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'profile'}) }}">Profile</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'e_commerce'}) }}">E-commerce</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'projects'}) }}">Projects</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'project_detail'}) }}">Project Detail</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'contacts'}) }}">Contacts</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'profile'}) }}">Profile</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('gentelella_page', {'page': 'page_404'}) }}">404 Error</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'page_500'}) }}">500 Error</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'plain_page'}) }}">Plain Page</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'login'}) }}">Login Page</a>
-                      </li>
-                      <li><a href="{{ path('gentelella_page', {'page': 'pricing_tables'}) }}">Pricing Tables</a>
-                      </li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'page_403'}) }}">403 Error</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'page_404'}) }}">404 Error</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'page_500'}) }}">500 Error</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'plain_page'}) }}">Plain Page</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'login'}) }}">Login Page</a></li>
+                      <li><a href="{{ path('gentelella_page', {'page': 'pricing_tables'}) }}">Pricing Tables</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
@@ -176,9 +142,8 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
-                  </li>
+                  </li>                  
+                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
 
@@ -206,7 +171,6 @@
 
         <!-- top navigation -->
         <div class="top_nav">
-
           <div class="nav_menu">
             <nav class="" role="navigation">
               <div class="nav toggle">
@@ -221,19 +185,15 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;">  Profile</a>
-                    </li>
+                    <li><a href="javascript:;"> Profile</a></li>
                     <li>
                       <a href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Settings</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="javascript:;">Help</a>
-                    </li>
-                    <li><a href="{{ path('gentelella_page', {'page': 'login'}) }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="{{ path('gentelella_page', {'page': 'login'}) }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
@@ -245,58 +205,50 @@
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
-                        <span class="image">
-                                          <img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                        <span class="image"><img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" /></span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
-                        <span class="image">
-                                          <img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                        <span class="image"><img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" /></span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
-                        <span class="image">
-                                          <img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                        <span class="image"><img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" /></span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a>
-                        <span class="image">
-                                          <img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" />
-                                      </span>
+                        <span class="image"><img src="{{ asset('assets/images/img.jpg') }}" alt="Profile Image" /></span>
                         <span>
-                                          <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
-                                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                                      </span>
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
                       </a>
                     </li>
                     <li>
@@ -309,19 +261,15 @@
                     </li>
                   </ul>
                 </li>
-
               </ul>
             </nav>
           </div>
-
         </div>
         <!-- /top navigation -->
-
 
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-
             <div class="row top_tiles" style="margin: 10px 0;">
               <div class="col-md-3 col-sm-3 col-xs-6 tile">
                 <span>Total Sessions</span>
@@ -930,7 +878,7 @@
     <script src="{{ asset('assets/js/datepicker/daterangepicker.js') }}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 
     <!-- Flot -->
     <script>

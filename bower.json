@@ -74,5 +74,8 @@
     "echarts": "^3.1.7",
     "malihu-custom-scrollbar-plugin": "^3.1.3",
     "animate.css": "^3.5.1"
+  },
+  "resolutions": {
+    "jquery": "^2.2.3"
   }
 }
