@@ -22,7 +22,7 @@
               <!-- ============================================  -->
               <target name="install" depends="build">
               <echo msg="Installing assets ... Wait for a moment" />
-              <exec command="bower install" />
+              <exec command="bower install" passthru="true" />
               <echo msg="Done ..." />
               </target>
 
@@ -31,7 +31,7 @@
               <!-- ============================================  -->
               <target name="update" depends="build">
               <echo msg="Updating assets ... Wait for a moment" />
-              <exec command="bower update" />
+              <exec command="bower update" passthru="true" />
               <echo msg="Done ..." />
               </target>
 </project>

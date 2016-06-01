@@ -76,6 +76,7 @@
     "animate.css": "^3.5.1"
   },
   "resolutions": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "fastclick": "^1.0.6"
   }
 }
