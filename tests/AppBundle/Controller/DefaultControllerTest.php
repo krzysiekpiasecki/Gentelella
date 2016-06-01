@@ -110,7 +110,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertSame('Plain page', $crawler->filter('div.right_col h3')->text());
+        $this->assertSame('Plain Page', $crawler->filter('div.right_col div.x_title h2')->text());
         $this->assertContains(
             'Gentelella',
             $crawler->filter('div.top_nav a:contains("Gentelella")')->text()
@@ -172,8 +172,8 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', sprintf('%s', $path));
         $this->assertTrue($client->getResponse()->getStatusCode() === 200);
         $this->assertSame(
-            'Plain page',
-            $crawler->filter('h3:contains("Plain page")')->text()
+            'Plain Page',
+            $crawler->filter('div.right_col div.x_title h2')->text()
         );
     }
     /**

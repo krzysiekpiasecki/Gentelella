@@ -13,60 +13,68 @@
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    {% block stylesheets %}
-
-    {% endblock %}
-
     <!-- Custom Theme Style -->
-    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet">
 
 </head>
 
 <body class="nav-md">
-
 <div class="container body">
     <div class="main_container">
+
+
         {% include 'admin/sidebar.html.twig' %}
         {% include 'admin/topnav.html.twig' %}
+
+
+        <!-- page content -->
         <div class="right_col" role="main">
-            <div>
+            <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>{% block page_title %}{% endblock %}</h3>
+                        <h3>Plain Page</h3>
                     </div>
+
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                          </span>
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="clearfix"></div>
-                {% block page_content %}{% endblock %}</div>
+
+
+                {% block page_content %}{% endblock %}
+
+
+            </div>
         </div>
+        <!-- /page content -->
+
+
+        {% include 'admin/footer.html.twig' %}
+
+
     </div>
-    {% include 'admin/footer.html.twig' %}
 </div>
 
+    <!-- jQuery -->
+    <script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
 
-<!-- jQuery -->
-<script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
-<!-- NProgress -->
-<script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
-{% block javascripts %}
-
-{% endblock %}
-
-<!-- Custom Theme Scripts -->
-<script src="{{ asset('assets/js/custom.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 
 </body>
 </html>
