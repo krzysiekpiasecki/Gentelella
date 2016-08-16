@@ -1,9 +1,31 @@
 # Gentelella
 
-[Live demo](https://gentelella.herokuapp.com/admin/index) | [Documentation](https://github.com/SymfonyCollection/Gentelella/wiki) |
-[Packagist.org](https://packagist.org/packages/krzysiekpiasecki/gentelella) |
-[Travis-ci.org](https://travis-ci.org/krzysiekpiasecki/Gentelella) | [Licence MIT](https://github.com/krzysiekpiasecki/Gentelella/blob/master/LICENSE)
-
 Gentelella is a free to use Bootstrap admin template developed and maintained by Colorlib and Aigars Silkalns integrated into Symfony web application framework.
+
+
+![Template preview](http://krzysiekpiasecki.github.io/Gentelella/img/preview.png)
+
+<br>
+
+### Live demo
+
+[Live preview](https://gentelella.herokuapp.com/admin/index) is installed on Heroku.
+
+<br>
+
+### Documentation
+
+If you're going to use this template then read more on [Wiki](https://github.com/krzysiekpiasecki/Gentelella/wiki).
+
+<br>
+
+### License
+The MIT License - Copyright (c) 2016 Krzysztof Piasecki
+
+<br>
+
+### Credits
+
+Gentelella - <a href='https://github.com/puikinsh/gentelella'>Template repository</a>
 
 
