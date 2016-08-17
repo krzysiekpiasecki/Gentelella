@@ -15,7 +15,7 @@ Gentelella is a free to use Bootstrap admin template developed and maintained by
 
 ### Documentation
 
-If you're going to use this template then read more on [Wiki](https://github.com/krzysiekpiasecki/Gentelella/wiki).
+If you're going to use this template then [read more on Wiki](https://github.com/krzysiekpiasecki/Gentelella/wiki).
 
 <br>
 
@@ -26,6 +26,6 @@ The MIT License - Copyright (c) 2016 Krzysztof Piasecki
 
 ### Credits
 
-Gentelella - <a href='https://github.com/puikinsh/gentelella'>Template repository</a>
+Gentelella - Admin template developed and maintained by Colorlib and Aigars Silkalns
 
 
