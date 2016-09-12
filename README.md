@@ -17,10 +17,6 @@ Gentelella is a free to use Bootstrap admin template developed and maintained by
 
 If you're going to use this template then [read more on Wiki](https://github.com/krzysiekpiasecki/Gentelella/wiki).
 
-<br>
-
-### License
-The MIT License - Copyright (c) 2016 Krzysztof Piasecki
 
 <br>
 
