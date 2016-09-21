@@ -1,17 +1,18 @@
 # Gentelella
 
-Gentelella is a free to use Bootstrap admin template developed and maintained by Colorlib and Aigars Silkalns integrated into Symfony web application framework.
+Symfony web application with excellent admin template developed and maintained by Colorlib and Aigars Silkalns.
 
 <br>
 
+### Screenshot
 
-![Template preview](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot.png)
+![Screenshot](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot.png)
 
 <br>
 
 ### Live demo
 
-[Live preview](https://gentelella.herokuapp.com/admin/index) is installed on Heroku.
+[Application](https://gentelella.herokuapp.com/admin/index) is installed on Heroku.
 
 <br>
 
