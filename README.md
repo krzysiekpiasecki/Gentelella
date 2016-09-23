@@ -1,10 +1,6 @@
 # Gentelella
 
-Symfony web application with excellent admin template developed and maintained by Colorlib and Aigars Silkalns.
-
-<br>
-
-### Screenshot
+Symfony web application with excellent admin template
 
 ![Screenshot](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot.png)
 
@@ -12,13 +8,13 @@ Symfony web application with excellent admin template developed and maintained b
 
 ### Live demo
 
-[Application](https://gentelella.herokuapp.com/admin/index) is installed on Heroku.
+[Gentelella is installed on Heroku](https://gentelella.herokuapp.com/admin/index)
 
 <br>
 
 ### Documentation
 
-If you're going to use this template then [read more on Wiki](https://github.com/krzysiekpiasecki/Gentelella/wiki).
+[More about this application](https://github.com/krzysiekpiasecki/Gentelella/wiki).
 
 
 <br>
