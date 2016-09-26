@@ -66,16 +66,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * Redirect to admin homepage which is currently index (plain page).
-     *
      * @Route("/", name="homepage")
-     *
      * @param Request $request Request
-     *
      * @return Request
      */
     public function homePageAction(Request $request)
     {
-        return $this->redirectToRoute('admin_page', ['page' => 'index']);
+        return $this->render('user/base.html.twig', []);
     }
 }
