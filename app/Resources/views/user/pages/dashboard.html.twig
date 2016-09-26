@@ -1,5 +1,18 @@
 {% extends "user/base.html.twig" %}
 
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <!-- iCheck -->
+    <link href="{{ asset('assets/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- jVectorMap -->
+    <link href="{{ asset('assets/css/maps/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet"/>
+    
+{% endblock stylesheets %}
+
 {% block page_content %}
           <!-- top tiles -->
           <div class="row tile_count">
@@ -993,4 +1006,5 @@
       gauge.setTextField(document.getElementById("gauge-text"));
     </script>
     <!-- /gauge.js -->
-{% endblock %}
+
+{% endblock javascripts %}
