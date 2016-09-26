@@ -43,29 +43,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * Render admin page.
-     *
-     * @Route("admin/{page}", name="admin_page", defaults={"page": "plain"})
-     *
-     * @param Request $request Request
-     * @param string  $page    Page name
-     *
-     * @return Response
-     */
-    public function adminAction(Request $request, $page = 'plain')
-    {
-        $templateName = basename(sprintf('admin/pages/%s.html.twig', $page));
-        if ($templateName !== sprintf('%s.html.twig', $page)) {
-            throw $this->createNotFoundException('Page not found');
-        }
-        if (!$this->get('templating')->exists(sprintf('admin/pages/%s', $templateName))) {
-            $templateName = 'plain.html.twig';
-        }
-
-        return $this->render(sprintf('admin/pages/%s', $templateName));
-    }
-
-    /**
      * @Route("/", name="homepage")
      * @param Request $request Request
      * @return Request
