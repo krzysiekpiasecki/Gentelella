@@ -47,7 +47,7 @@ class DefaultController extends Controller
      * @param Request $request Request
      * @return Request
      */
-    public function homePageAction(Request $request)
+    public function homepageAction(Request $request)
     {
         return $this->render('user/base.html.twig', []);
     }
