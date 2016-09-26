@@ -17,7 +17,7 @@ class DefaultController extends Controller
     /**
      * Render Gentelella page.
      *
-     * @Route("gentelella/{page}", name="gentelella_page", defaults={"page": "index"})
+     * @Route("gentelella/{page}", name="app_gentelella", defaults={"page": "index"})
      *
      * @param Request $request
      * @param string  $page
@@ -43,18 +43,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @todo Allow public access
-     * @Route("/gentelella", name="homepage_gentelella")
-     * @param Request $request Request
-     * @return Request
-     */
-    public function homepageGentelellaAction(Request $request)
-    {
-        return $this->render('gentelella/index.html.twig', []);
-    }
-
-    /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="app_homepage")
      * @param Request $request Request
      * @return Request
      */
