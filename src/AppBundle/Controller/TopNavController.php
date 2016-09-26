@@ -19,12 +19,12 @@ class TopNavController extends Controller
 {
     /**
      * 
-     * @Route("/profile", name="app_user_profile")
+     * @Route("/profile", name="app_profile")
      *
      * @param Request $request
      * @return Response
      */
-    public function displayProfileAction(Request $request)
+    public function profileAction(Request $request)
     {
         return $this->render('user/pages/profile.html.twig', []);
     }
