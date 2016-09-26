@@ -13,11 +13,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * User profile controller
+ * Top navigation controller
  *
  * @Route("/user")
  */
-class ProfileController extends Controller
+class TopNavController extends Controller
 {
     /**
      * 
@@ -29,6 +29,18 @@ class ProfileController extends Controller
     public function displayProfileAction(Request $request)
     {
         return $this->render('user/pages/profile.html.twig', []);
+    }
+
+    /**
+     * 
+     * @Route("/help", name="app_help")
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function helpAction(Request $request)
+    {
+        return $this->render('user/pages/help.html.twig', []);
     }
 
 }
