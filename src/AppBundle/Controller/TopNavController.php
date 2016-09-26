@@ -43,4 +43,16 @@ class TopNavController extends Controller
         return $this->render('user/pages/help.html.twig', []);
     }
 
+    /**
+     * 
+     * @Route("/settings", name="app_settings")
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function settingsAction(Request $request)
+    {
+        return $this->render('user/pages/settings.html.twig', []);
+    }
+
 }
