@@ -14,8 +14,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Top navigation controller
- *
- * @Route("/user")
  */
 class TopNavController extends Controller
 {

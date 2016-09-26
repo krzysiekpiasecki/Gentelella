@@ -50,7 +50,7 @@ class DefaultController extends Controller
      */
     public function homepageGentelellaAction(Request $request)
     {
-        return $this->render('user/base.html.twig', []);
+        return $this->render('gentelella/index.html.twig', []);
     }
 
     /**
