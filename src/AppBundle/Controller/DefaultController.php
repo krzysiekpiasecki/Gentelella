@@ -43,12 +43,23 @@ class DefaultController extends Controller
     }
 
     /**
+     * @todo Allow public access
+     * @Route("/gentelella", name="homepage_gentelella")
+     * @param Request $request Request
+     * @return Request
+     */
+    public function homepageGentelellaAction(Request $request)
+    {
+        return $this->render('user/base.html.twig', []);
+    }
+
+    /**
      * @Route("/", name="homepage")
      * @param Request $request Request
      * @return Request
      */
     public function homepageAction(Request $request)
     {
-        return $this->render('user/base.html.twig', []);
+        return $this->render('user/pages/dashboard.html.twig', []);
     }
 }
