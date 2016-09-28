@@ -1,36 +1,88 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{% if error %}
+ 
+ {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="POST">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    <h1>Login Form</h1>
-    <div>
-      <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}" />
-    </div>
-    <div>
-      <input type="password" class="form-control" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}" />
-    </div>
-    <div>
-      <input class="btn btn-default submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />          
-      <a class="reset_pass" href="#">Lost your password?</a>
-    </div>
+ <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
 
-    <div class="clearfix"></div>
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+              <form action="{{ path("fos_user_security_check") }}" method="POST">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />              
+              <h1>Login Form</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="{{ 'security.login.username'|trans }}" id="username" name="_username" value="{{ last_username }}" required="required" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="{{ 'security.login.password'|trans }}" id="password" name="_password" required="required" />
+              </div>              
+              <div>
+                <input class="btn btn-default submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />                
+                <a class="reset_pass" href="#">Lost your password?</a>
+              </div>
 
-    <div class="separator">
-      <p class="change_link">New to site?
-        <a href="#signup" class="to_register"> Create Account </a>
-      </p>
+              <div class="clearfix"></div>
 
-      <div class="clearfix"></div>
-      <br />
+              <div class="separator">
+                <p class="change_link">New to site?
+                  <a href="#signup" class="to_register"> Create Account </a>
+                </p>
 
-      <div>
-        <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-        <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella</h1>
+                  <p>©2016 All Rights Reserved.
+                    <a href="">Privacy and Terms</a>
+                  </p> 
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+              <form class="fos_user_registration_register" action="{{ path('fos_user_registration_register') }}" method="POST">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />              
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+              <input class="btn btn-default submit" type="submit" value="{{ 'registration.submit'|trans }}" />
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella</h1>
+                  <p>©2016 All Rights Reserved. <a href="">Privacy and Terms</a></p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        
       </div>
     </div>
-</form>
