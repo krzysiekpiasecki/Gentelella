@@ -61,7 +61,7 @@ class DefaultControllerTest extends WebTestCase
      *
      * @param string $path
      */
-    public function testGentellelaPages($path)
+    public function testGentelellaPages($path)
     {
         $client = static::createClient();
         $crawler = $client->request('GET', sprintf('%s', $path));
