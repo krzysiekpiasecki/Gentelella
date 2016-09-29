@@ -30,7 +30,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{ path('app_homepage') }}" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="{{ path('app_gentelella', {'page': 'index'}) }}" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -56,7 +56,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ path('app_homepage') }}">Dashboard</a></li>
+                      <li><a href="{{ path('app_gentelella', {'page': 'index'}) }}">Dashboard</a></li>
                       <li><a href="{{ path('app_gentelella', {'page': 'index2'}) }}">Dashboard2</a></li>
                       <li><a href="{{ path('app_gentelella', {'page': 'index3'}) }}">Dashboard3</a></li>
                     </ul>
@@ -311,7 +311,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="dashboard_graph">
 
-                <div class="row x_title">
+                <div class="row xtitle">
                   <div class="col-md-6">
                     <h3>Network Activities <small>Graph title sub-title</small></h3>
                   </div>

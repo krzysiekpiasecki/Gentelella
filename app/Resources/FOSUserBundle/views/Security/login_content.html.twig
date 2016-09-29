@@ -1,8 +1,4 @@
 {% trans_default_domain 'FOSUserBundle' %}
- 
- {% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
 
  <div>
       <a class="hiddenanchor" id="signup"></a>
@@ -11,6 +7,10 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
+              {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <br/>
+              {% endif %}
               <form action="{{ path("fos_user_security_check") }}" method="POST">
               <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />              
               <h1>Login Form</h1>

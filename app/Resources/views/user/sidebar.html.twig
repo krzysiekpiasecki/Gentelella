@@ -25,16 +25,28 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="{{ path('app_homepage') }}"><i class="fa fa-home"></i> Dashboard</a>
-                    </li>
-                </ul> 
+                    <li><a href="{{ path('app_homepage') }}"><i class="fa fa-home"></i> Dashboard</a></li>
+                </ul>                    
             </div>
+            <div class="menu_section">
+                <h3>Developer</h3>
+                <ul class="nav side-menu">
+                    <li>
+                        <a><i class="fa fa-book"></i> Documentation <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="http://symfony.com/doc/current/index.html"><i class="fa fa-book"></i> Symfony</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="{{ path('app_gentelella', {page: 'index'}) }}"><i class="fa fa-search"></i> Template</a></li>               
+                </ul>                    
+            </div>
+            
         </div>
         <!-- /sidebar menu -->
 
         <!-- /menu footer buttons -->
         <div class="sidebar-footer hidden-small">
-            <a href="{{ path('app_settings') }}" data-toggle="tooltip" data-placement="top" title="Settings">
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </a>
             <a data-toggle="tooltip" data-placement="top" title="FullScreen">
