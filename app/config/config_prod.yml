@@ -1,4 +1,5 @@
 imports:
+    - { resource: parameters_heroku.yml }
     - { resource: config.yml }
 
 #framework:
