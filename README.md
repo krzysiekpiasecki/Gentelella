@@ -12,7 +12,7 @@ Symfony web application with excellent admin template
 
 [Gentelella application is installed on Heroku](https://gentelella.herokuapp.com)
 
-Credentials: <strong>admin</strong>, password - <strong>password</strong>.
+Credentials: <strong>admin</strong>, <strong>password</strong>.
 
 <br>
 
