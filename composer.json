@@ -77,7 +77,7 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml",
-            "dist-file": "app/config/parameters_heroku.yml.dist"
+            "dist-file": "app/config/parameters_heroku.yml"
         }
     }
 }
