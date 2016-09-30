@@ -1,48 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Gentelella" default="install">
-
-              <!-- ============================================  -->
-              <!-- Target: schema                                -->
-              <!-- ============================================  -->
-              <target name="db_create_schema">
-                <echo msg="Database schema dropped ..." />
-                <exec command="php bin/console doctrine:schema:drop --force"/> 
-                <echo msg="Database schema created ..." />              
-                <exec command="php bin/console doctrine:schema:create"/> 
-              </target>
-
+<project name="Gentelella" default="build">
 
               <!-- ============================================  -->
               <!-- Target: prepare                               -->
               <!-- ============================================  -->
               <target name="prepare">
-              <echo msg="Nothing to do ..." />
+                  <echo msg="Enviroment ready ..." />
               </target>
 
 
               <!-- ============================================  -->
               <!-- Target: build                                 -->
               <!-- ============================================  -->
-              <target name="build" depends="prepare">
-              <echo msg="Nothing to do ..." />
+              <target name="build" depends="prepare">                
+                <exec command="php bin/console doctrine:database:drop --force"/> 
+                <echo msg="Database has been created ..." />              
+                <exec command="php bin/console doctrine:database:create"/> 
+                <echo msg="Schema has been created ..." />              
+                <exec command="php bin/console doctrine:schema:create"/> 
+
+                <echo msg="Installing assets ... Wait for a moment" />
+                <exec command="bower install" passthru="true" />
+                <echo msg="Done ..." />
               </target>
 
-              <!-- ============================================  -->
-              <!-- Target: install                               -->
-              <!-- ============================================  -->
-              <target name="install" depends="build">
-              <echo msg="Installing assets ... Wait for a moment" />
-              <exec command="bower install" passthru="true" />
-              <echo msg="Done ..." />
-              </target>
-
-              <!-- ============================================  -->
-              <!-- Target: update                                -->
-              <!-- ============================================  -->
-              <target name="update" depends="build">
-              <echo msg="Updating assets ... Wait for a moment" />
-              <exec command="bower update" passthru="true" />
-              <echo msg="Done ..." />
-              </target>
 </project>
