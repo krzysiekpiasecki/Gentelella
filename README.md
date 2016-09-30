@@ -4,7 +4,6 @@ Symfony web application with excellent admin template
 
 <br>
 
-
 ![Screenshot](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot.png)
 
 <br>
