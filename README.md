@@ -10,7 +10,11 @@ Symfony web application with excellent admin template
 
 ### Live demo
 
-[Gentelella is installed on Heroku](https://gentelella.herokuapp.com/admin/index)
+[Gentelella application is installed on Heroku](https://gentelella.herokuapp.com). 
+
+<br>
+
+Use credentials: user - <strong>admin</strong>, password - <strong>password</strong>.
 
 <br>
 
