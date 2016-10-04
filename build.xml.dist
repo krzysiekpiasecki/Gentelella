@@ -13,8 +13,7 @@
               <!-- ============================================  -->
               <!-- Target: build                                 -->
               <!-- ============================================  -->
-              <target name="build" depends="prepare">                
-                <exec command="php bin/console doctrine:database:drop --force"/> 
+              <target name="build" depends="prepare">
                 <exec command="php bin/console doctrine:database:create"/> 
                 <echo msg="Database has been created ..." />              
                 <exec command="php bin/console doctrine:schema:create"/> 
