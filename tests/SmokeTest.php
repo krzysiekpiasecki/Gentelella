@@ -42,7 +42,8 @@ class SmokeTest extends WebTestCase
      */
     public static function tearDownAfterClass()
     {
-        (self::$client)->request('GET', '/logout');
+        $client = self::$client;
+        $client->request('GET', '/logout');
     }
 
     /**

@@ -21,7 +21,6 @@ install:
 
 before_script:
   - phpenv config-add php.ini.dist
-  - mysql -e "create database IF NOT EXISTS gentelella;" -u root
 
 script:
   - ./vendor/bin/php-cs-fixer fix --verbose --level=symfony
