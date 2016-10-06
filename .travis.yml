@@ -4,6 +4,9 @@ env:
 
 language: php
 
+services:
+  - mysql
+
 php:
   - 5.6
   - 7.0
