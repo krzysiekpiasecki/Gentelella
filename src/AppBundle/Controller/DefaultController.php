@@ -43,13 +43,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/", name="app_homepage")
+     * @Route("/", name="app_dashboard")
      *
      * @param Request $request Request
      *
      * @return Response
      */
-    public function homepageAction(Request $request)
+    public function dashboardAction(Request $request)
     {
         return $this->render('user/pages/dashboard.html.twig', []);
     }

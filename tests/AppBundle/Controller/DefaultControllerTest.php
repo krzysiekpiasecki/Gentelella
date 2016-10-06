@@ -5,55 +5,37 @@
  * that was distributed with this source code.
  */
 
-namespace tests;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Smoke test.
+ * DefaultControllerTest.
+ *
+ * @see DefaultController
  */
-class SmokeTest extends WebTestCase
+class DefaultControllerTest extends WebTestCase
 {
     /**
-     * Logged client.
-     */
-    private static $client = null;
-
-    /**
-     * Set up before class.
-     */
-    public static function setUpBeforeClass()
-    {
-        if (is_null(self::$client)) {
-            $client = static::createClient();
-            $crawler = $client->request('GET', '/login');
-            $form = $crawler->filter('form')->form(array(
-                '_username' => 'test',
-                '_password' => 'test',
-            ));
-            $client->submit($form);
-            $crawler = $client->followRedirect();
-            self::$client = $client;
-        }
-    }
-
-    /**
-     * Tear down after class.
-     */
-    public static function tearDownAfterClass()
-    {
-        $client = self::$client;
-        $client->request('GET', '/logout');
-    }
-
-    /**
      * @dataProvider provideUrl
+     *
+     * @param string $url Relative page url
      */
-    public function testUrl($url)
+    public function testTemplatePages($url)
     {
-        $client = self::$client;
-        $crawler = $client->request('GET', $url);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $client = new \WebTestClient('test', 'test');
+        $authClient = $client->logIn();
+        $crawler = $authClient->request('GET', $url);
+        $this->assertEquals(200, $authClient->getResponse()->getStatusCode());
+    }
+
+    public function testDashboard()
+    {
+        $client = new \WebTestClient('test', 'test');
+        $authClient = $client->logIn();
+        $crawler = $authClient->request('GET', '/');
+        $this->assertSame('Total Users', trim($crawler->filter('span.count_top')->text()));
+        $this->assertEquals(200, $authClient->getResponse()->getStatusCode());
     }
 
     /**
