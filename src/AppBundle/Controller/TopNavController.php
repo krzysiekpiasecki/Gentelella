@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Top navigation controller
+ * Top navigation controller.
  */
 class TopNavController extends Controller
 {
@@ -21,6 +21,7 @@ class TopNavController extends Controller
      * @Route("/profile", name="app_profile")
      *
      * @param Request $request
+     *
      * @return Response
      */
     public function profileAction(Request $request)

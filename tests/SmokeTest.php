@@ -8,22 +8,19 @@
 namespace tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\BrowserKit\Cookie;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
- * Smoke test
+ * Smoke test.
  */
 class SmokeTest extends WebTestCase
 {
-
     /**
-     * Logged client
+     * Logged client.
      */
     private static $client = null;
 
     /**
-     * Set up before class
+     * Set up before class.
      */
     public static function setUpBeforeClass()
     {
@@ -32,8 +29,8 @@ class SmokeTest extends WebTestCase
             $crawler = $client->request('GET', '/login');
             $form = $crawler->filter('form')->form(array(
                 '_username' => 'test',
-                '_password' => 'test'
-            ));        
+                '_password' => 'test',
+            ));
             $client->submit($form);
             $crawler = $client->followRedirect();
             self::$client = $client;
@@ -41,7 +38,7 @@ class SmokeTest extends WebTestCase
     }
 
     /**
-     * Tear down after class
+     * Tear down after class.
      */
     public static function tearDownAfterClass()
     {
@@ -52,7 +49,7 @@ class SmokeTest extends WebTestCase
      * @dataProvider provideUrl
      */
     public function testUrl($url)
-    {        
+    {
         $client = self::$client;
         $crawler = $client->request('GET', $url);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
@@ -108,7 +105,7 @@ class SmokeTest extends WebTestCase
             ['/gentelella/tables_dynamic'],
             ['/gentelella/typography'],
             ['/gentelella/widgets'],
-            ['/gentelella/xx'],                        
+            ['/gentelella/xx'],
         ];
     }
 }
