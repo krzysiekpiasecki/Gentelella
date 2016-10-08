@@ -10,31 +10,22 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * DefaultControllerTest.
+ * Tests for dead links.
  *
  * @see DefaultController
  */
-class DefaultControllerTest extends WebTestCase
+class URLTest extends WebTestCase
 {
     /**
+     * @Test
      * @dataProvider provideUrl
      *
      * @param string $url Relative page url
      */
-    public function testTemplatePages($url)
+    public function testResponseOK($url)
     {
-        $client = new \WebTestClient('test', 'test');
-        $authClient = $client->logIn();
-        $crawler = $authClient->request('GET', $url);
-        $this->assertEquals(200, $authClient->getResponse()->getStatusCode());
-    }
-
-    public function testDashboard()
-    {
-        $client = new \WebTestClient('test', 'test');
-        $authClient = $client->logIn();
-        $crawler = $authClient->request('GET', '/');
-        $this->assertSame('Total Users', trim($crawler->filter('span.count_top')->text()));
+        $authClient = (new \TestClient('test', 'test'))->auth();
+        $authClient->request('GET', $url);
         $this->assertEquals(200, $authClient->getResponse()->getStatusCode());
     }
 
@@ -47,7 +38,7 @@ class DefaultControllerTest extends WebTestCase
             ['/'],
             ['/profile'],
             ['/gentelella'],
-            ['/gentelella'],
+            ['/gentelella/index'],
             ['/gentelella/calendar'],
             ['/gentelella/chartjs'],
             ['/gentelella/chartjs2'],

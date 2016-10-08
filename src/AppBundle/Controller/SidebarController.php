@@ -13,19 +13,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * TopNavController.
+ * SidebarController.
  */
-class TopNavController extends Controller
+class SidebarController extends Controller
 {
     /**
-     * @Route("/profile", name="app_profile")
+     * @Route("/", name="app_dashboard")
      *
-     * @param Request $request
+     * @param Request $request Request
      *
      * @return Response
      */
-    public function profileAction(Request $request)
+    public function dashboardAction(Request $request)
     {
-        return $this->render('user/pages/profile.html.twig', []);
+        return $this->render('user/pages/dashboard.html.twig', []);
     }
 }

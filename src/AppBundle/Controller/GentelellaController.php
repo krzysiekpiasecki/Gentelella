@@ -12,7 +12,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+/**
+ * GentelellaController.
+ */
+class GentelellaController extends Controller
 {
     /**
      * Render Gentelella page.
@@ -40,17 +43,5 @@ class DefaultController extends Controller
         }
 
         return $this->render(sprintf('gentelella/%s.html.twig', $page));
-    }
-
-    /**
-     * @Route("/", name="app_dashboard")
-     *
-     * @param Request $request Request
-     *
-     * @return Response
-     */
-    public function dashboardAction(Request $request)
-    {
-        return $this->render('user/pages/dashboard.html.twig', []);
     }
 }

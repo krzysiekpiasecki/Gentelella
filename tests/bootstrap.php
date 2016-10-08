@@ -8,13 +8,15 @@ register_shutdown_function(function () {
     shell_exec('php bin/console fos:user:deactivate test');
 });
 
-class WebTestClient
+class TestClient
 {
+    private static $client;
+
     private $username;
     private $password;
 
     /**
-     * WebTestClient constructor.
+     * TestClient constructor.
      *
      * @param $username
      * @param $password
@@ -25,26 +27,35 @@ class WebTestClient
         $this->password = $password;
     }
 
-    public function logIn()
+    public function auth()
     {
-        static $client = null;
-
-        if ($client === null) {
-            $kernel = new AppKernel('test', false);
-            $kernel->boot();
-            $client = $kernel->getContainer()->get('test.client');
-
-            $crawler = $client->request('GET', '/logout');
-            $crawler = $client->request('GET', '/login');
-
-            $form = $crawler->filter('form')->form(array(
-                '_username' => $this->username,
-                '_password' => $this->password,
-            ));
-            $client->submit($form);
-            $client->followRedirect();
+        if (self::$client == null) {
+            self::$client = $this->client();
         }
 
+        return self::$client;
+    }
+
+    private function client()
+    {
+        $kernel = new AppKernel('test', false);
+        $kernel->boot();
+        $client = $kernel->getContainer()->get('test.client');
+        $crawler = $client->request('GET', '/login');
+        $form = $crawler->filter('form')->form(array(
+            '_username' => $this->username,
+            '_password' => $this->password,
+        ));
+        $client->submit($form);
+        $client->followRedirect();
+
         return $client;
+    }
+
+    public function logout()
+    {
+        self::$client->request('GET', '/logout');
+        self::$client->followRedirect();
+        self::$client = null;
     }
 }
