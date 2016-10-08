@@ -1,6 +1,6 @@
 # Gentelella
 
-Symfony web application with excellent admin template
+Symfony skeleton application with user account based on twitter bootstrap.
 
 <br>
 
