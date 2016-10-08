@@ -1,6 +1,6 @@
 # Gentelella
 
-Symfony skeleton application with user account based on twitter bootstrap.
+Symfony skeleton application based on twitter bootstrap with user account implementation.
 
 <br>
 
@@ -10,15 +10,14 @@ Symfony skeleton application with user account based on twitter bootstrap.
 
 ### Live demo
 
-[Gentelella application is installed at Heroku](https://gentelella.herokuapp.com)
+[Gentelella application is installed on Heroku](https://gentelella.herokuapp.com)
 
-Login credentials: <strong>admin</strong> <strong>password</strong>.
 
 <br>
 
 ### Documentation
 
-[More about this application](https://github.com/krzysiekpiasecki/Gentelella/wiki)
+[More about the Gentelella](https://github.com/krzysiekpiasecki/Gentelella/wiki)
 
 
 <br>
