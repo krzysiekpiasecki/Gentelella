@@ -1,6 +1,6 @@
 {
     "name": "krzysiekpiasecki/gentelella",
-    "description": "Gentelella Admin theme is a free to use Bootstrap admin template integrated into Symfony full stack framework.",
+    "description": "Symfony skeleton application with user account based on twitter bootstrap",
     "license": "MIT",
     "keywords": [
       "framework",
@@ -10,6 +10,7 @@
       "bootstrap",
       "responsive",
       "admin",
+      "user",
       "php",
       "html",
       "css"
