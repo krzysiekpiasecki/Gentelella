@@ -1,6 +1,6 @@
 {
     "name": "krzysiekpiasecki/gentelella",
-    "description": "Symfony skeleton application with user account based on twitter bootstrap",
+    "description": "A Symfony skeleton application based on the twitter bootstrap with user account functionality",
     "license": "MIT",
     "keywords": [
       "framework",
@@ -11,7 +11,6 @@
       "responsive",
       "admin",
       "user",
-      "php",
       "html",
       "css"
     ],

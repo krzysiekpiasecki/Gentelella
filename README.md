@@ -4,13 +4,13 @@ Symfony skeleton application based on twitter bootstrap with user account implem
 
 <br>
 
-![Screenshot](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot.png)
+![Screenshot](https://github.com/krzysiekpiasecki/Gentelella/blob/master/web/assets/images/screenshot2.png)
 
 <br>
 
 ### Live demo
 
-[Gentelella application is installed on Heroku](https://gentelella.herokuapp.com)
+[Gentelella on Heroku](https://gentelella.herokuapp.com)
 
 
 <br>
