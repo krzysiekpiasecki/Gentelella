@@ -1,6 +1,6 @@
 # Gentelella
 
-Symfony skeleton application based on twitter bootstrap with user account implementation.
+Symfony skeleton application based on twitter bootstrap with user account functionality.
 
 <br>
 
