@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * GentelellaController.
- */I
+ */
 class GentelellaController extends Controller
 {
     /**
