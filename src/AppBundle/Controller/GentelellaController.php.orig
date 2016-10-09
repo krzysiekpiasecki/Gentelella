@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * GentelellaController.
- */I
+ */
 class GentelellaController extends Controller
 {
     /**
@@ -44,6 +44,8 @@ class GentelellaController extends Controller
 
         return $this->render(sprintf('gentelella/%s.html.twig', $page));
     }
+<<<<<<< HEAD:src/AppBundle/Controller/GentelellaController.php
+=======
 
     /**
      * @Route("/", name="app_homepage")
@@ -54,4 +56,5 @@ class GentelellaController extends Controller
     {
         return $this->render('user/pages/dashboard.html.twig', []);
     }
+>>>>>>> ea9b9ef868cf6148f8836025336c05859cd07462:src/AppBundle/Controller/DefaultController.php
 }
