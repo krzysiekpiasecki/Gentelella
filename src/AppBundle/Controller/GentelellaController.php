@@ -47,7 +47,9 @@ class GentelellaController extends Controller
 
     /**
      * @Route("/", name="app_homepage")
+     *
      * @param Request $request Request
+     *
      * @return Response
      */
     public function homepageAction(Request $request)
