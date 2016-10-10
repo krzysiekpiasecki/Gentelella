@@ -26,6 +26,30 @@ class SidebarController extends Controller
      */
     public function dashboardAction(Request $request)
     {
-        return $this->render('user/pages/dashboard.html.twig', []);
+        return $this->render('app/pages/dashboard.html.twig', []);
+    }
+
+    /**
+     * @Route("/calendar", name="app_calendar")
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function calendarAction(Request $request)
+    {
+        return $this->render('app/pages/calendar.html.twig', []);
+    }
+
+    /**
+     * @Route("/contacts", name="app_contacts")
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function contactsAction(Request $request)
+    {
+        return $this->render('app/pages/contacts.html.twig', []);
     }
 }

@@ -19,12 +19,9 @@ class SidebarControllerTest extends WebTestCase
     /**
      * @Test
      */
-    public function testDashboard()
+    public function testLogo()
     {
         $authClient = (new \TestClient('test', 'test'))->auth();
-
-        $crawler = $authClient->request('GET', '/profile');
-        $this->assertSame('Profile', trim($crawler->filter('.title_left h3')->text()));
 
         $link = $authClient->getCrawler()->filter('.site_title')->link();
         $crawler = $authClient->click($link);
@@ -34,7 +31,31 @@ class SidebarControllerTest extends WebTestCase
     /**
      * @Test
      */
-    public function testLogo()
+    public function testCalendar()
+    {
+        $client = (new \TestClient('test', 'test'))->auth();
+
+        $link = $client->getCrawler()->selectLink('Calendar')->link();
+        $crawler = $client->click($link);
+        $this->assertSame('Calendar', trim($crawler->filter('.right_col h3')->text()));
+    }
+
+    /**
+     * @Test
+     */
+    public function testContacts()
+    {
+        $client = (new \TestClient('test', 'test'))->auth();
+
+        $link = $client->getCrawler()->selectLink('Contacts')->link();
+        $crawler = $client->click($link);
+        $this->assertSame('Contacts', trim($crawler->filter('.right_col h3')->text()));
+    }
+
+    /**
+     * @Test
+     */
+    public function testDashboard()
     {
         $client = (new \TestClient('test', 'test'))->auth();
 

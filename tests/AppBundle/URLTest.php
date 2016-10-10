@@ -37,6 +37,8 @@ class URLTest extends WebTestCase
         return [
             ['/'],
             ['/profile'],
+            ['/contacts'],
+            ['/calendar'],
             ['/gentelella'],
             ['/gentelella/index'],
             ['/gentelella/calendar'],

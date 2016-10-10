@@ -54,6 +54,6 @@ class GentelellaController extends Controller
      */
     public function homepageAction(Request $request)
     {
-        return $this->render('user/pages/dashboard.html.twig', []);
+        return $this->render('app/pages/dashboard.html.twig', []);
     }
 }

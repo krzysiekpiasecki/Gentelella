@@ -26,6 +26,6 @@ class TopNavController extends Controller
      */
     public function profileAction(Request $request)
     {
-        return $this->render('user/pages/profile.html.twig', []);
+        return $this->render('app/pages/profile.html.twig', []);
     }
 }
