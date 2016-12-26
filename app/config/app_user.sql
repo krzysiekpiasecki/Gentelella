@@ -1,0 +1,23 @@
+CREATE TABLE `app_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL,
+  `expired` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `credentials_expired` tinyint(1) NOT NULL,
+  `credentials_expire_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_88BDF3E992FC23A8` (`username_canonical`),
+  UNIQUE KEY `UNIQ_88BDF3E9A0D96FBF` (`email_canonical`),
+  UNIQUE KEY `UNIQ_88BDF3E9C05FB297` (`confirmation_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
