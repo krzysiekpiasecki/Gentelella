@@ -21,3 +21,41 @@ CREATE TABLE `app_user` (
   UNIQUE KEY `UNIQ_88BDF3E9A0D96FBF` (`email_canonical`),
   UNIQUE KEY `UNIQ_88BDF3E9C05FB297` (`confirmation_token`)
 ) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `app_user` 
+(`id`,
+`username`,
+`username_canonical`,
+`email`,
+`email_canonical`,
+`enabled`,
+`salt`,
+`password`,
+`last_login`,
+`locked`,
+`expired`,
+`expires_at`,
+`confirmation_token`,
+`password_requested_at`,
+`roles`,
+`credentials_expired`,
+`credentials_expire_at`)
+VALUES (
+'12', 
+'admin',
+ 'admin',
+ 'admin@example.com',
+ 'admin@example.com',
+ '1',
+ '857w5i4j55gcw00wg0s48kgg8sg8ck0',
+ '$2y$13$L/k8uze.FQSeCdw44l.h8.ro8IvN9N2thKrbhtGBZEZkw7CrVyV7e',
+ '2016-12-26 14:23:47',
+ '0',
+ '0',
+ NULL,
+ NULL,
+ NULL,
+ 'a:1:{i:0;s:16:\"ROLE_SUPER_ADMIN\";}',
+ '0',
+ NULL
+ );
