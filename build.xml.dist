@@ -14,7 +14,7 @@
               <!-- ============================================  -->
               <target name="build" depends="prepare">
 
-                <exec command="php bin/console doctrine:database:create"/> 
+                <exec command="php bin/console doctrine:database:create --if-not-exists"/>
                 <echo msg="Database has been created ..." />
 
                 <exec command="php bin/console doctrine:schema:create"/> 
@@ -23,9 +23,10 @@
                 <exec command="php bin/console fos:user:create test test@example.com test"/>
                 <exec command="php bin/console fos:user:promote test ROLE_ADMIN"/>
 
-                <echo msg="Test user has been created ..." />           
+                <echo msg="Test user has been created and not activated ..." />
 
-                <echo msg="Installing assets ... Wait for a moment" />
+                <echo msg="Installing web assets ... Wait for a moment" />
+
                 <exec command="bower install" passthru="true" />
                 <echo msg="Done ..." />
 
