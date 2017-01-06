@@ -1,11 +1,19 @@
  <?php
 
-    $finder = Symfony\CS\Finder\DefaultFinder::create()
-        ->in([
-            sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'src'),
-            sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'tests')
-        ]);
+require_once 'vendor/autoload.php';
 
-    return Symfony\CS\Config\Config::create()
-        ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
-        ->finder($finder);
+use PhpCsFixer\Finder;
+
+$finder = (Finder::create())->in([
+    sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'src'),
+    sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'tests')
+]);
+
+return PhpCsFixer\Config::create()
+    ->setCacheFile(__DIR__.'/var/cache/php_cs.cache')
+    ->setRules(array(
+        '@Symfony' => true,
+        'full_opening_tag' => false,
+    ))
+    ->setFinder($finder)
+;
