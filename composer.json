@@ -54,8 +54,7 @@
             "composer exec phpunit -v"
         ],
         "build": [
-            "composer exec phing -v",
-            "@test"
+            "composer exec phing -v"
         ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
