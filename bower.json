@@ -1,6 +1,5 @@
 {
   "name": "gentelella",
-  "version": "1.3.0",
   "homepage": "https://colorlib.com/polygon/gentelella/index.html",
   "authors": [
     "Aigars Silkalns",
@@ -25,7 +24,7 @@
   ],
   "devDependencies": {
     "jquery": "^2.2.3",
-    "bootstrap": "^3.3.6",
+    "bootstrap": "^3.3.7",
     "font-awesome": "fontawesome#^4.6.1",
     "fastclick": "^1.0.6",
     "nprogress": "^0.2.0",
@@ -34,7 +33,7 @@
     "bootstrap-progressbar": "^0.9.0",
     "iCheck": "icheck#^1.0.2",
     "Flot": "flot#^0.8.3",
-    "bootstrap-daterangepicker": "^2.1.19",
+    "bootstrap-daterangepicker": "^2.1.25",
     "skycons": "https://github.com/darkskyapp/skycons.git",
     "jquery-sparkline": "^2.1.3",
     "morris.js": "^0.5.1",
@@ -73,7 +72,12 @@
     "jszip": "Stuk/jszip#v2.6.0",
     "echarts": "^3.1.7",
     "malihu-custom-scrollbar-plugin": "^3.1.3",
-    "animate.css": "^3.5.1"
+    "animate.css": "^3.5.1",
+    "jqvmap": "^1.5.1",
+    "DateJS": "^1.0.0-rc3",
+    "flot.curvedlines": "^1.1.1",
+    "flot.orderbars": "*",
+    "flot-spline": "^0.8.2"
   },
   "resolutions": {
     "jquery": "^2.2.3",

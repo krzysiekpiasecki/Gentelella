@@ -7,16 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentallela Alela! | </title>
+    <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ asset('assets/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- iCheck -->
     <link href="{{ asset('assets/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-    <!-- jVectorMap -->
-    <link href="{{ asset('assets/css/maps/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet"/>
+    <!-- JQVMap -->
+    <link href="{{ asset('assets/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet">
@@ -34,7 +36,7 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile">
+            <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="{{ asset('assets/images/img.jpg') }}" alt="..." class="img-circle profile_img">
               </div>
@@ -162,7 +164,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ path('app_gentelella', {'page': 'login'}) }}">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -173,7 +175,7 @@
         <!-- top navigation -->
         <div class="top_nav">
           <div class="nav_menu">
-            <nav class="" role="navigation">
+            <nav>
               <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
@@ -446,189 +448,16 @@
     <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
     <!-- jQuery Sparklines -->
     <script src="{{ asset('assets/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-    <!-- jVectorMap -->
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-2.0.3.min.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ asset('assets/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jqvmap/dist/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
     <!-- easy-pie-chart -->
     <script src="{{ asset('assets/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets/js/custom.min.js') }}"></script>
-
-    <!-- jVectorMap -->
-    <script src="{{ asset('assets/js/maps/gdp-data.js') }}"></script>
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-us-aea-en.js') }}"></script>
-    <script>
-      $(document).ready(function() {
-        $.getJSON('js/maps/us-unemployment.json', function(data) {
-          var val = 2009,
-            statesValues = jvm.values.apply({}, jvm.values(data.states)),
-            metroPopValues = Array.prototype.concat.apply([], jvm.values(data.metro.population)),
-            metroUnemplValues = Array.prototype.concat.apply([], jvm.values(data.metro.unemployment));
-
-          $('#usa_map').vectorMap({
-            map: 'us_aea_en',
-            markers: data.metro.coords,
-            backgroundColor: 'transparent',
-            zoomOnScroll: false,
-            series: {
-              markers: [{
-                attribute: 'fill',
-                scale: ['#FEE5D9', '#A50F15'],
-                values: data.metro.unemployment[val],
-                min: jvm.min(metroUnemplValues),
-                max: jvm.max(metroUnemplValues)
-              }, {
-                attribute: 'r',
-                scale: [5, 20],
-                values: data.metro.population[val],
-                min: jvm.min(metroPopValues),
-                max: jvm.max(metroPopValues)
-              }],
-              regions: [{
-                scale: ['#E6F2F0', '#149B7E'],
-                attribute: 'fill',
-                values: data.states[val],
-                min: jvm.min(statesValues),
-                max: jvm.max(statesValues)
-              }]
-            },
-            onMarkerTipShow: function(event, label, index) {
-              label.html(
-                '<b>' + data.metro.names[index] + '</b><br/>' +
-                '<b>Population: </b>' + data.metro.population[val][index] + '</br>' +
-                '<b>Unemployment rate: </b>' + data.metro.unemployment[val][index] + '%'
-              );
-            },
-            onRegionTipShow: function(event, label, code) {
-              label.html(
-                '<b>' + label.html() + '</b></br>' +
-                '<b>Unemployment rate: </b>' + data.states[val][code] + '%'
-              );
-            }
-          });
-        });
-      });
-    </script>
-    <script>
-      $(document).ready(function() {
-        $('#world-map-gdp').vectorMap({
-          map: 'world_mill_en',
-          backgroundColor: 'transparent',
-          zoomOnScroll: false,
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#E6F2F0', '#149B7E'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          onRegionTipShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-      });
-    </script>
-    <!-- /jVectorMap -->
-
-    <!-- easy-pie-chart -->
-    <script>
-      $(document).ready(function() {
-        $('.chart').easyPieChart({
-          easing: 'easeOutBounce',
-          lineWidth: '6',
-          barColor: '#75BCDD',
-          onStep: function(from, to, percent) {
-            $(this.el).find('.percent').text(Math.round(percent));
-          }
-        });
-        var chart = window.chart = $('.chart').data('easyPieChart');
-        $('.js_update').on('click', function() {
-          chart.update(Math.random() * 200 - 100);
-        });
-
-        //hover and retain popover when on popover content
-        var originalLeave = $.fn.popover.Constructor.prototype.leave;
-        $.fn.popover.Constructor.prototype.leave = function(obj) {
-          var self = obj instanceof this.constructor ?
-            obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type);
-          var container, timeout;
-
-          originalLeave.call(this, obj);
-
-          if (obj.currentTarget) {
-            container = $(obj.currentTarget).siblings('.popover');
-            timeout = self.timeout;
-            container.one('mouseenter', function() {
-              //We entered the actual popover – call off the dogs
-              clearTimeout(timeout);
-              //Let's monitor popover content instead
-              container.one('mouseleave', function() {
-                $.fn.popover.Constructor.prototype.leave.call(self, self);
-              });
-            });
-          }
-        };
-
-        $('body').popover({
-          selector: '[data-popover]',
-          trigger: 'click hover',
-          delay: {
-            show: 50,
-            hide: 400
-          }
-        });
-      });
-    </script>
-    <!-- easy-pie-chart -->
-
-    <!-- jQuery Sparklines -->
-    <script>
-      $(document).ready(function() {
-        $(".sparkline_bar").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
-          type: 'bar',
-          colorMap: {
-            '7': '#a1a1a1'
-          },
-          barColor: '#26B99A'
-        });
-
-        $(".sparkline_area").sparkline([5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7], {
-          type: 'line',
-          lineColor: '#26B99A',
-          fillColor: '#26B99A',
-          spotColor: '#4578a0',
-          minSpotColor: '#728fb2',
-          maxSpotColor: '#6d93c4',
-          highlightSpotColor: '#ef5179',
-          highlightLineColor: '#8ba8bf',
-          spotRadius: 2.5,
-          width: 85
-        });
-
-        $(".sparkline_line").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
-          type: 'line',
-          lineColor: '#26B99A',
-          fillColor: '#ffffff',
-          width: 85,
-          spotColor: '#34495E',
-          minSpotColor: '#34495E'
-        });
-
-        $(".sparkline_pie").sparkline([1, 1, 2, 1], {
-          type: 'pie',
-          sliceColors: ['#26B99A', '#ccc', '#75BCDD', '#D66DE2']
-        });
-
-        $(".sparkline_discreet").sparkline([4, 6, 7, 7, 4, 3, 2, 1, 4, 4, 2, 4, 3, 7, 8, 9, 7, 6, 4, 3], {
-          type: 'discrete',
-          barWidth: 3,
-          lineColor: '#26B99A',
-          width: '85',
-        });
-
-      });
-    </script>
-    <!-- /jQuery Sparklines -->
+	
   </body>
 </html>

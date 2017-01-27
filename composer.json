@@ -26,7 +26,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "": "tests/"
         }
     },
     "require": {
@@ -51,10 +52,10 @@
     },
     "scripts": {
         "test": [
-            "composer exec phpunit -v"
+            "composer exec ./vendor/bin/phpunit -v"
         ],
         "build": [
-            "composer exec phing -v"
+            "composer exec ./vendor/bin/phing -v"
         ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

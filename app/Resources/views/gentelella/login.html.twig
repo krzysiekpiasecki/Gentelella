@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentallela Alela! | </title>
+    <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ asset('assets/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- Animate.css -->
     <link href="{{ asset('assets/vendors/animate.css/animate.min.css') }}" rel="stylesheet">
 
@@ -37,7 +39,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="{{ path('app_dashboard') }}">Log in</a>
+                <a class="btn btn-default submit" href="{{ path('app_gentelella', {'page': 'index'}) }}">Log in</a>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
@@ -74,7 +76,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="{{ path('app_dashboard') }}">Submit</a>
+                <a class="btn btn-default submit" href="{{ path('app_gentelella', {'page': 'index'}) }}">Submit</a>
               </div>
 
               <div class="clearfix"></div>

@@ -16,3 +16,4 @@ build.xml
 /vendor/
 /web/bundles/
 /web/assets/vendors
+!composer.lock
