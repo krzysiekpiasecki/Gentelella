@@ -10,17 +10,17 @@ namespace AppBundle;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Test template pages
- *
+ * Test template pages.
  */
 class GentelellaTest extends WebTestCase
 {
     /**
-     * Provides non extra pages
+     * Provides non extra pages.
      *
      * @return array
      */
-    public static function provideNonExtraPages() {
+    public static function provideNonExtraPages()
+    {
         return [
         ['/gentelella'],
         ['/gentelella/index'],
@@ -79,6 +79,5 @@ class GentelellaTest extends WebTestCase
 
         $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
     }
 }

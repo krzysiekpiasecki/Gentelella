@@ -9,10 +9,8 @@ namespace AppBundle;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-
 /**
  * Tests for dead links.
- *
  */
 class URLTest extends WebTestCase
 {
@@ -41,5 +39,4 @@ class URLTest extends WebTestCase
             Pages::provideTemplatePages()
         );
     }
-
 }

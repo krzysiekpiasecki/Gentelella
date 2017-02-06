@@ -8,8 +8,7 @@
 namespace AppBundle;
 
 /**
- * Provides pages
- *
+ * Provides pages.
  */
 class Pages
 {
@@ -72,20 +71,19 @@ class Pages
         ['/gentelella/xx'],
     ];
 
-
-
     /**
      * @return array
      */
-    public static function provideAppPages() {
+    public static function provideAppPages()
+    {
         return self::$appPages;
     }
 
     /**
      * @return array
      */
-    public static function provideTemplatePages() {
+    public static function provideTemplatePages()
+    {
         return self::$templatePages;
     }
-
 }
