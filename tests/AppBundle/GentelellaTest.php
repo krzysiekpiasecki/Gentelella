@@ -8,7 +8,7 @@
 namespace AppBundle;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
+use Symfony\Component\DomCrawler\Crawler;
 /**
  * Test template pages.
  */
@@ -77,7 +77,7 @@ class GentelellaTest extends WebTestCase
 
         $link = $client->getCrawler()->selectLink('Back to the application')->link();
 
-        //$crawler = $client->click($link);
+        $crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 }
