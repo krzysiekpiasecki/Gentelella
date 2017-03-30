@@ -59,7 +59,7 @@ class Builder implements ContainerAwareInterface
         $menu = $factory->createItem('root');
         $roots  = $em->getRepository('AppBundle:Menu')->findAll(/*$user->getId(),$options['slug']*/);
         if(!$roots){
-            throw $this->createNotFoundException('Unable to find entity.');
+            //throw $this->createNotFoundException('Unable to find entity.');
         }
         
         return $this->createMenu($menu,$roots);      
