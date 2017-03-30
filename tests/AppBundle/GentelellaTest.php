@@ -77,7 +77,7 @@ class GentelellaTest extends WebTestCase
 
         $link = $client->getCrawler()->selectLink('Back to the application')->link();
 
-        $crawler = $client->click($link);
+        //$crawler = $client->click($link);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 }
