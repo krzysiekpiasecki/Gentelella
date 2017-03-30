@@ -29,7 +29,7 @@ class Builder implements ContainerAwareInterface
         */
         $securityContext = $this->container->get('security.token_storage');
         $user = $securityContext->getToken()->getUser();
-        $menu->addChild('logout', array('label' => 'Log Out','route' => 'abcis_logout'))
+        $menu->addChild('logout', array('label' => 'Log Out','route' => 'fos_user_security_logout'))
             ->setExtras(array(
                 'dropdown' => false,
                 'icon' => 'fa fa-sign-out',
@@ -40,17 +40,10 @@ class Builder implements ContainerAwareInterface
                 'dropdown' => true,
                 'icon' => 'fa fa-user',
             ));
-        $menu['User']->addChild('Change password', array('route' => 'abcis_login_change_'))
+        $menu['User']->addChild('Profile', array('route' => 'app_profile'))
             ->setExtra('icon', 'fa fa-refresh');
 
-        $menu['User']->addChild('Switch users', array('uri' => '#'))
-            ->setExtra('icon', 'fa fa-exchange')->setLinkAttributes(array(
-                                                        'data-toggle'=>'modal',
-                                                        'data-target'=> '.bs-example-modal-lg'
-                                                        ));
-            
-        //$menu['User']['Switch users']->setAttribute('data-toggle', 'modal');
-        //$menu['User']['Switch users']->setAttribute('data-target', 'bs-example-modal-lg');
+       
         return $menu;
     }
     

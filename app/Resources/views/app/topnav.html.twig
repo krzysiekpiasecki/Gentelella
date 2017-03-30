@@ -1,3 +1,21 @@
+
+<!-- top navigation -->
+{% block menu -%}
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav class="" role="navigation">
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+            {{ knp_menu_render('AppBundle:Builder:userMenu', {'currentClass': 'active', 'template': 'menu/knp_menu_dropdown.html.twig'}) }}   
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->
+{%- endblock %} 
+            
+{#     
 <!-- top navigation -->
 <div class="top_nav">
     <div class="nav_menu">
@@ -93,3 +111,4 @@
     </div>
 </div>
 <!-- /top navigation -->
+#}

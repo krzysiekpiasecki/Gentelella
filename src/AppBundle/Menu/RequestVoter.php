@@ -15,10 +15,12 @@ class RequestVoter implements VoterInterface
     }
     public function matchItem(ItemInterface $item)
     {
-    	if ($item->getUri() === $this->container->get('request')->getRequestUri()) {
+        $request = $this->container->get('request_stack')->getCurrentRequest();
+        
+    	if ($item->getUri() === $request->getRequestUri()) {
     		// URL's completely match
             return true;
-        } else if($item->getUri() !== $this->container->get('request')->getBaseUrl().'/' && (substr($this->container->get('request')->getRequestUri(), 0, strlen($item->getUri())) === $item->getUri())) {
+        } else if($item->getUri() !== $request->getBaseUrl().'/' && (substr($request->getRequestUri(), 0, strlen($item->getUri())) === $item->getUri())) {
         	// URL isn't just "/" and the first part of the URL match
 	    	return true;
     	}
