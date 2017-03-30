@@ -17,3 +17,4 @@ build.xml
 /web/bundles/
 /web/assets/vendors
 !composer.lock
+/nbproject/private/

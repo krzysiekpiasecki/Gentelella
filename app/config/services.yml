@@ -2,8 +2,14 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
 #    parameter_name: value
+    #knp_menu.voter.router.class: AppBundle\Menu\RequestVoter
 
 services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    menu.voter.request:
+            class: AppBundle\Menu\RequestVoter
+            arguments: ["@service_container"]
+            tags:
+                - { name: knp_menu.voter }
