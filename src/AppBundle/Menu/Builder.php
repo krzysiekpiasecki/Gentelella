@@ -47,23 +47,44 @@ class Builder implements ContainerAwareInterface
         return $menu;
     }
     
+    public function mainMenu(FactoryInterface $factory, array $options)
+    {   
+        //$this->request = $this->container->get('request_stack')->getCurrentRequest();   
+        // access services from the container!
+        $em = $this->container->get('doctrine')->getManager();
+        
+        $securityContext = $this->container->get('security.token_storage');
+        $user = $securityContext->getToken()->getUser(); 
    
+        $menu = $factory->createItem('root');
+        $roots  = $em->getRepository('AppBundle:Menu')->findAll(/*$user->getId(),$options['slug']*/);
+        if(!$roots){
+            throw $this->createNotFoundException('Unable to find entity.');
+        }
+        
+        return $this->createMenu($menu,$roots);      
+    }
    
       
     public function createMenu($menu,$roots){
-
+        $this->request = $this->container->get('request_stack')->getCurrentRequest();   
         foreach ($roots as $key => $root) {
-            if($root->getPath()=='#'){
-                //$root->getPath(), '', $_SERVER['REQUEST_URI']
-                $menu->addChild($root->getName(), array('uri' => $root->getPath(),))
+            if($root->getTipo()==1){
+                if($root->getPath()=='#'){
+                    $menu->addChild($root->getName(), array('uri' => $root->getPath(),))
                         ->setExtras(array(
-                            'class'=> $root->getCss(),
-                            'icon'=> $root->getIcon(),
-                            'id'=>$root->getId()
-                        ));
-                /*$menu[$root->getName()]->setAttribute('class', $root->getCss());
-                $menu[$root->getName()]->setAttribute('icon', $root->getIcon());
-                $menu[$root->getName()]->setAttribute('id', $root->getId());*/
+                            'class' => $root->getCss(),
+                            'icon'  => $root->getIcon(),
+                            'id'    => $root->getId()
+                    ));
+                }else{
+                    $menu->addChild($root->getName(), array('uri' => $root->getPath(),'route'=>$root->getPath()))
+                        ->setExtras(array(
+                            'class' => $root->getCss(),
+                            'id'    => $root->getId()
+                    ));
+                }
+                
             }else{
                 if($root->getDefaultOption()){
                     $string = utf8_encode(stripslashes(chop(trim($root->getDefaultOption()))));
@@ -85,12 +106,12 @@ class Builder implements ContainerAwareInterface
                     ));//->setCurrent($current);
                     
                 }
-                /*}else{
+                /*else{
                     if($menu and $root->getMenuParent() and $root->getName())
                     $menu[$root->getMenuParent()->getName()]->addChild($root->getName(), array(
                         'route' => $root->getPath(),
                     ));
-                } */  
+                } */
             }
             
         }

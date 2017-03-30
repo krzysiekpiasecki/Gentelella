@@ -6,6 +6,7 @@
     {%- set attributes = item.attributes %}
     {%- set is_dropdown = item.getExtra('dropdown', false) %}
     {%- set icon = item.getExtra('icon') %}
+    {%- set clase = item.getExtra('class') %}
 
     
     {%- if item.getExtra('divider_prepend') %}
@@ -84,24 +85,16 @@
 {% endif %}
 {% endblock %}
 
-{% block linkElement %}
-    {#
-    {%- set current = '#' %}
-    {%- if matcher.isCurrent(item) %}
-    {%- set current = item.uri %}
-    {%- elseif matcher.isAncestor(item, options.depth) %}
-    {%- set current = item.uri %}
-    {% endif %}
-    #}
+{% block linkElement -%}
     {%- set current = item.uri %}
     <a href="{{ current }}" {{ macros.attributes(item.linkAttributes) }}>
-        {% if icon is not empty  %}
-            <span class="{{ icon }} "></span>
-        {% endif %}
+        <i class="{{ clase }}"></i>  
         {{ block('label') }}
+        {% if icon is not empty  %}
+        <span class="{{ icon }} "></span>
+        {% endif %}
     </a>
-    
-{% endblock %}
+{%- endblock %}
 
 {% block spanElement %}
     <span{{ macros.attributes(item.labelAttributes) }}>

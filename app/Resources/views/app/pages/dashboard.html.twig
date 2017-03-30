@@ -9,7 +9,7 @@
     <!-- bootstrap-progressbar -->
     <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     <!-- jVectorMap -->
-    <link href="{{ asset('assets/css/maps/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/vendors/maps/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet"/>
     
 {% endblock stylesheets %}
 
@@ -733,12 +733,12 @@
     <script src="{{ asset('assets/vendors/Flot/jquery.flot.stack.js') }}"></script>
     <script src="{{ asset('assets/vendors/Flot/jquery.flot.resize.js') }}"></script>
     <!-- Flot plugins -->
-    <script src="{{ asset('assets/js/flot/jquery.flot.orderBars.js') }}"></script>
-    <script src="{{ asset('assets/js/flot/date.js') }}"></script>
-    <script src="{{ asset('assets/js/flot/jquery.flot.spline.js') }}"></script>
-    <script src="{{ asset('assets/js/flot/curvedLines.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ asset('assets/vendors/DateJS/build/date.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot-spline/js/jquery.flot.spline.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot.curvedlines/curvedLines.js') }}"></script>
     <!-- jVectorMap -->
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-2.0.3.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/maps/jquery-jvectormap-2.0.3.min.js') }}"></script>
     <!-- bootstrap-daterangepicker -->
     <script src="{{ asset('assets/js/moment/moment.min.js') }}"></script>
     <script src="{{ asset('assets/js/datepicker/daterangepicker.js') }}"></script>
@@ -820,9 +820,9 @@
     <!-- /Flot -->
 
     <!-- jVectorMap -->
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('assets/js/maps/jquery-jvectormap-us-aea-en.js') }}"></script>
-    <script src="{{ asset('assets/js/maps/gdp-data.js') }}"></script>
+    <script src="{{ asset('assets/vendors/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <script src="{{ asset('assets/vendors/maps/jquery-jvectormap-us-aea-en.js') }}"></script>
+    <script src="{{ asset('assets/vendors/maps/gdp-data.js') }}"></script>
     <script>
       $(document).ready(function(){
         $('#world-map-gdp').vectorMap({

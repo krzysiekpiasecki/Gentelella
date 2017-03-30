@@ -48,7 +48,8 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
         server_version: '5.5' # in case you are using mysql 5.5
-
+        mapping_types:
+            enum: string
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
