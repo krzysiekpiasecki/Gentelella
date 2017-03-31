@@ -8,7 +8,7 @@
 namespace AppBundle;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\DomCrawler\Crawler;
+
 /**
  * Test template pages.
  */

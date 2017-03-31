@@ -10,16 +10,14 @@ use Knp\Menu\Renderer\ListRenderer;
 use Knp\Menu\Matcher\Voter\UriVoter;
 
 use Symfony\Component\HttpFoundation\Request;
-  
+
 class Builder implements ContainerAwareInterface
 {
-    
     use ContainerAwareTrait;
     private $request;
     
     public function userMenu(FactoryInterface $factory, array $options)
     {
-
         $menu = $factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
         /*
@@ -48,55 +46,54 @@ class Builder implements ContainerAwareInterface
     }
     
     public function mainMenu(FactoryInterface $factory, array $options)
-    {   
-        //$this->request = $this->container->get('request_stack')->getCurrentRequest();   
+    {
+        //$this->request = $this->container->get('request_stack')->getCurrentRequest();
         // access services from the container!
         $em = $this->container->get('doctrine')->getManager();
         
         $securityContext = $this->container->get('security.token_storage');
-        $user = $securityContext->getToken()->getUser(); 
+        $user = $securityContext->getToken()->getUser();
    
         $menu = $factory->createItem('root');
         $roots  = $em->getRepository('AppBundle:Menu')->findAll(/*$user->getId(),$options['slug']*/);
-        if(!$roots){
+        if (!$roots) {
             //throw $this->createNotFoundException('Unable to find entity.');
         }
         
-        return $this->createMenu($menu,$roots);      
+        return $this->createMenu($menu, $roots);
     }
    
       
-    public function createMenu($menu,$roots){
-        $this->request = $this->container->get('request_stack')->getCurrentRequest();   
+    public function createMenu($menu, $roots)
+    {
+        $this->request = $this->container->get('request_stack')->getCurrentRequest();
         foreach ($roots as $key => $root) {
-            if($root->getTipo()==1){
-                if($root->getPath()=='#'){
+            if ($root->getTipo()==1) {
+                if ($root->getPath()=='#') {
                     $menu->addChild($root->getName(), array('uri' => $root->getPath(),))
                         ->setExtras(array(
                             'class' => $root->getCss(),
                             'icon'  => $root->getIcon(),
                             'id'    => $root->getId()
                     ));
-                }else{
+                } else {
                     $menu->addChild($root->getName(), array('uri' => $root->getPath(),'route'=>$root->getPath()))
                         ->setExtras(array(
                             'class' => $root->getCss(),
                             'id'    => $root->getId()
                     ));
                 }
-                
-            }else{
-                if($root->getDefaultOption()){
+            } else {
+                if ($root->getDefaultOption()) {
                     $string = utf8_encode(stripslashes(chop(trim($root->getDefaultOption()))));
-                    $params = json_decode($string,true);
-                }else{
+                    $params = json_decode($string, true);
+                } else {
                     $params = null;
-                    
                 }
-                if($menu and $root and $root->getMenuParent() and $root->getName()){
-                    if($this->request->get('_route')==$root->getPath()){
+                if ($menu and $root and $root->getMenuParent() and $root->getName()) {
+                    if ($this->request->get('_route')==$root->getPath()) {
                         $current = true;
-                    }else{
+                    } else {
                         $current = false;
                     }
                     $menu[$root->getMenuParent()->getName()]->addChild($root->getName(), array(
@@ -104,7 +101,6 @@ class Builder implements ContainerAwareInterface
                         'route' => $root->getPath(),
                         'routeParameters' => $params
                     ));//->setCurrent($current);
-                    
                 }
                 /*else{
                     if($menu and $root->getMenuParent() and $root->getName())
@@ -113,12 +109,8 @@ class Builder implements ContainerAwareInterface
                     ));
                 } */
             }
-            
         }
         
         return $menu;
     }
-    
-    
-    
 }
