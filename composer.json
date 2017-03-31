@@ -44,7 +44,7 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "phing/phing": "^2.0",
         "knplabs/knp-menu": "^2.2",
-        "knplabs/knp-menu-bundle": "dev-master"
+        "knplabs/knp-menu-bundle": "^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
