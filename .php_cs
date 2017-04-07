@@ -2,7 +2,7 @@
 
 use PhpCsFixer\Finder;
 
-$finder = (Finder::create())->in([
+$finder = Finder::create()->in([
     sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'src'),
     sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, 'tests')
 ]);
