@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
@@ -26,8 +27,7 @@ class LoadMenuData implements FixtureInterface
 
         $manager->persist($menu);
         $manager->flush();
-        
-        
+
         $menu1 = new Menu();
         $menu1->setName('Outlook');
         $menu1->setPath('#');
@@ -45,8 +45,7 @@ class LoadMenuData implements FixtureInterface
 
         $manager->persist($menu1);
         $manager->flush();
-        
-        
+
         $menu2 = new Menu();
         $menu2->setName('Calendar');
         $menu2->setPath('app_calendar');
@@ -62,11 +61,9 @@ class LoadMenuData implements FixtureInterface
         //$menu2->setDefaultOption('');
         //$menu2->setIcon('');
 
-        
         $manager->persist($menu2);
         $manager->flush();
-        
-        
+
         $menu3 = new Menu();
         $menu3->setName('Contacts');
         $menu3->setPath('app_contacts');
