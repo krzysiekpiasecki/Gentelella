@@ -1,4 +1,5 @@
 /app/config/parameters.yml
+/app/config/parameters_heroku.yml
 /build/
 build.xml
 /phpunit.xml
