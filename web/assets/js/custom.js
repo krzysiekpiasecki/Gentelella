@@ -53,7 +53,6 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
 	
 // Sidebar
 function init_sidebar() {
-// TODO: This is some kind of easy fix, maybe we can improve this
 var setContentHeight = function () {
 	// reset height
 	$RIGHT_COL.css('min-height', $(window).height());
