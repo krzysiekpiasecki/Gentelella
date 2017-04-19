@@ -48,8 +48,7 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
         server_version: '5.5' # in case you are using mysql 5.5
-        mapping_types:
-            enum: string
+
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
@@ -75,15 +74,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
-    from_email:
-        address: "yourapp@yourapp.com"
-        sender_name: "Demo String"
 
+# KnpMenu Configuration
 knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:
         template: KnpMenuBundle::menu.html.twig
-    #  if true, enables the helper for PHP templates
-    templating: false
-    # the renderer to use, list is also available by default
-    default_renderer: twig
