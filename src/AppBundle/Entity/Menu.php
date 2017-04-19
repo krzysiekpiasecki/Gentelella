@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Menu
+ * Menu.
  *
  * @ORM\Table(name="menu", indexes={@ORM\Index(name="IDX_D28E2E1EEC93897", columns={"menu_parent"})})
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Menu
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -71,14 +71,14 @@ class Menu
     private $label;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="order_option", type="integer", nullable=true)
      */
     private $orderOption;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="tipo", type="integer", nullable=true)
      */
@@ -115,12 +115,10 @@ class Menu
      */
     private $menuParent;
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -128,7 +126,7 @@ class Menu
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -142,7 +140,7 @@ class Menu
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -152,7 +150,7 @@ class Menu
     }
 
     /**
-     * Set path
+     * Set path.
      *
      * @param string $path
      *
@@ -166,7 +164,7 @@ class Menu
     }
 
     /**
-     * Get path
+     * Get path.
      *
      * @return string
      */
@@ -176,7 +174,7 @@ class Menu
     }
 
     /**
-     * Set css
+     * Set css.
      *
      * @param string $css
      *
@@ -190,7 +188,7 @@ class Menu
     }
 
     /**
-     * Get css
+     * Get css.
      *
      * @return string
      */
@@ -200,7 +198,7 @@ class Menu
     }
 
     /**
-     * Set style
+     * Set style.
      *
      * @param string $style
      *
@@ -214,7 +212,7 @@ class Menu
     }
 
     /**
-     * Get style
+     * Get style.
      *
      * @return string
      */
@@ -224,7 +222,7 @@ class Menu
     }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
      *
@@ -238,7 +236,7 @@ class Menu
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
      * @return string
      */
@@ -248,7 +246,7 @@ class Menu
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -262,7 +260,7 @@ class Menu
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -272,7 +270,7 @@ class Menu
     }
 
     /**
-     * Set label
+     * Set label.
      *
      * @param string $label
      *
@@ -286,7 +284,7 @@ class Menu
     }
 
     /**
-     * Get label
+     * Get label.
      *
      * @return string
      */
@@ -296,9 +294,9 @@ class Menu
     }
 
     /**
-     * Set orderOption
+     * Set orderOption.
      *
-     * @param integer $orderOption
+     * @param int $orderOption
      *
      * @return Menu
      */
@@ -310,9 +308,9 @@ class Menu
     }
 
     /**
-     * Get orderOption
+     * Get orderOption.
      *
-     * @return integer
+     * @return int
      */
     public function getOrderOption()
     {
@@ -320,9 +318,9 @@ class Menu
     }
 
     /**
-     * Set tipo
+     * Set tipo.
      *
-     * @param integer $tipo
+     * @param int $tipo
      *
      * @return Menu
      */
@@ -334,9 +332,9 @@ class Menu
     }
 
     /**
-     * Get tipo
+     * Get tipo.
      *
-     * @return integer
+     * @return int
      */
     public function getTipo()
     {
@@ -344,7 +342,7 @@ class Menu
     }
 
     /**
-     * Set statusOption
+     * Set statusOption.
      *
      * @param string $statusOption
      *
@@ -358,7 +356,7 @@ class Menu
     }
 
     /**
-     * Get statusOption
+     * Get statusOption.
      *
      * @return string
      */
@@ -368,7 +366,7 @@ class Menu
     }
 
     /**
-     * Set defaultOption
+     * Set defaultOption.
      *
      * @param string $defaultOption
      *
@@ -382,7 +380,7 @@ class Menu
     }
 
     /**
-     * Get defaultOption
+     * Get defaultOption.
      *
      * @return string
      */
@@ -392,7 +390,7 @@ class Menu
     }
 
     /**
-     * Set icon
+     * Set icon.
      *
      * @param string $icon
      *
@@ -406,7 +404,7 @@ class Menu
     }
 
     /**
-     * Get icon
+     * Get icon.
      *
      * @return string
      */
@@ -416,7 +414,7 @@ class Menu
     }
 
     /**
-     * Set menuParent
+     * Set menuParent.
      *
      * @param \AppBundle\Entity\Menu $menuParent
      *
@@ -430,7 +428,7 @@ class Menu
     }
 
     /**
-     * Get menuParent
+     * Get menuParent.
      *
      * @return \AppBundle\Entity\Menu
      */

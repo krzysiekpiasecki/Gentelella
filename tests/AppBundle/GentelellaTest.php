@@ -34,7 +34,7 @@ class GentelellaTest extends WebTestCase
         ['/gentelella/fixed_sidebar'],
         ['/gentelella/form'],
         ['/gentelella/form_advanced'],
-        //['/gentelella/form_buttons'],
+        ['/gentelella/form_buttons'],
         ['/gentelella/form_upload'],
         ['/gentelella/form_validation'],
         ['/gentelella/form_wizards'],

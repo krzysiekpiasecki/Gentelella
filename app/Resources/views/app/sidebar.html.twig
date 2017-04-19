@@ -22,18 +22,6 @@
 
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-            <br/>
-            <div class="menu_section">
-            <h3>Menu</h3>
-            {% set menuItem = knp_menu_get('AppBundle:Builder:mainMenu', [], {'slug': 'dashboard'}) %}
-            {{ knp_menu_render(menuItem,
-                    {
-                    'currentClass': 'active strong',
-                    'ancestorClass': 'active strong',
-                    'template': 'menu/knp_menu_sidebar.html.twig'
-                    }) }}
-            </div>    
-        
             <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">

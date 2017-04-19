@@ -82,8 +82,4 @@ class LoadMenuData implements FixtureInterface
         $manager->persist($menu3);
         $manager->flush();
     }
-    
-    
-    
-    
 }

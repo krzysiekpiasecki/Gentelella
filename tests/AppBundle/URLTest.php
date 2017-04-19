@@ -9,6 +9,8 @@ namespace AppBundle;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+require_once 'Pages.php';
+
 /**
  * Tests for dead links.
  */
