@@ -9,10 +9,9 @@ try {
     if (null == $kernel->getContainer()->get('doctrine')->getRepository('\AppBundle\Entity\User')->findByEmail('test@example.com')) {
         shell_exec('php bin/console fos:user:create test test@example.com test');
     }
-        
+
     shell_exec('php bin/console fos:user:activate test');
     shell_exec('php bin/console fos:user:promote test ROLE_ADMIN');
-
 } finally {
     $kernel->shutdown();
     register_shutdown_function(function () {
@@ -21,10 +20,8 @@ try {
     });
 }
 
-
 class TestClient
 {
-
     private static $client;
     private $username;
     private $password;
