@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Gentelella" default="build">
+<project name="Gentelella" default="setup">
+              
+              <!-- ============================================  -->
+              <!-- Target: setup                                 -->
+              <!-- ============================================  -->
+              
+              <target name="setup">
 
-              <!-- ============================================  -->
-              <!-- Target: prepare                               -->
-              <!-- ============================================  -->
-              <target name="prepare">
-                  <echo msg="Enviroment ready ..." />
-              </target>
+                <property environment="env" /> 
 
-              <!-- ============================================  -->
-              <!-- Target: build                                 -->
-              <!-- ============================================  -->
-              <target name="build" depends="prepare">
-
+                <echo msg="Setting up a database schema" />
+                             
                 <exec command="php bin/console doctrine:database:create --if-not-exists"/>
-                <echo msg="Database has been created ..." />
-
                 <exec command="php bin/console doctrine:schema:create"/> 
-                <echo msg="Schema has been created ..." />                              
+                
+                <echo msg="Setting up a super admin" />
 
-                <exec command="php bin/console fos:user:create test test@example.com test"/>
-                <exec command="php bin/console fos:user:promote test ROLE_ADMIN"/>
+                <if>
+                  <and>
+                    <isset property="${env.ADMIN_NAME}" />
+                    <isset property="${env.ADMIN_EMAIL}" />
+                    <isset property="${env.ADMIN_PASSWORD}" />                  
+                  </and>
+                  <then>
+                    <exec  passthru="true"  command="php bin/console fos:user:create --super-admin ${env.ADMIN_NAME} ${env.ADMIN_EMAIL} ${env.ADMIN_PASSWORD}"/>              
+                  </then>
+                  <else>
+                    <input propertyname="username" defaultValue="no">Please choose a username:</input>
+                    <input propertyname="email" defaultValue="no">Please choose an email:</input>
+                    <input propertyname="password" defaultValue="no">Please choose a password</input>
+                    <exec command="php bin/console fos:user:create ${username} ${email} ${password} --super-admin" />              
+                  </else>
+                </if>
 
-                <echo msg="Test user has been created and not activated ..." />
-
-                <echo msg="Installing web assets ... Wait for a moment" />
-
+                <echo msg="Installing assets" />
                 <exec command="bower install" passthru="true" />
                 <echo msg="Done ..." />
 
               </target>
-
+              
 </project>
