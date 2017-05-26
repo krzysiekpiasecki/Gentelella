@@ -18,8 +18,6 @@ class Pages
     private static $appPages = [
         ['/'],
         ['/profile'],
-        ['/contacts'],
-        ['/calendar'],
     ];
 
     /**

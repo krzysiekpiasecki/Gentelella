@@ -31,30 +31,6 @@ class SidebarControllerTest extends WebTestCase
     /**
      * @Test
      */
-    public function testCalendar()
-    {
-        $client = (new \TestClient('test', 'test'))->auth();
-
-        $link = $client->getCrawler()->selectLink('Calendar')->link();
-        $crawler = $client->click($link);
-        $this->assertSame('Calendar', trim($crawler->filter('.right_col h3')->text()));
-    }
-
-    /**
-     * @Test
-     */
-    public function testContacts()
-    {
-        $client = (new \TestClient('test', 'test'))->auth();
-
-        $link = $client->getCrawler()->selectLink('Contacts')->link();
-        $crawler = $client->click($link);
-        $this->assertSame('Contacts', trim($crawler->filter('.right_col h3')->text()));
-    }
-
-    /**
-     * @Test
-     */
     public function testDashboard()
     {
         $client = (new \TestClient('test', 'test'))->auth();
