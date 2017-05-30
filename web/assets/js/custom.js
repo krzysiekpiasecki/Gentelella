@@ -614,13 +614,12 @@ if (typeof NProgress != 'undefined') {
 	function init_JQVmap(){
 
 		//console.log('check init_JQVmap [' + typeof (VectorCanvas) + '][' + typeof (jQuery.fn.vectorMap) + ']' );	
-		
+					
 		if(typeof (jQuery.fn.vectorMap) === 'undefined'){ return; }
 		
 		console.log('init_JQVmap');
-	     
+
 			if ($('#world-map-gdp').length ){
-		 
 				$('#world-map-gdp').vectorMap({
 					map: 'world_en',
 					backgroundColor: null,
@@ -637,7 +636,6 @@ if (typeof NProgress != 'undefined') {
 			}
 			
 			if ($('#usa_map').length ){
-			
 				$('#usa_map').vectorMap({
 					map: 'usa_en',
 					backgroundColor: null,
@@ -735,6 +733,7 @@ if (typeof NProgress != 'undefined') {
 	   
 	function init_gauge() {
 			
+
 		if( typeof (Gauge) === 'undefined'){ return; }
 		
 		console.log('init_gauge [' + $('.gauge-chart').length + ']');
@@ -759,39 +758,41 @@ if (typeof NProgress != 'undefined') {
 	  };
 		
 		
+
 		if ($('#chart_gauge_01').length){ 
-		
+			
 			var chart_gauge_01_elem = document.getElementById('chart_gauge_01');
 			var chart_gauge_01 = new Gauge(chart_gauge_01_elem).setOptions(chart_gauge_settings);
+		
+			if ($('#gauge-text').length){ 
 			
+				chart_gauge_01.maxValue = 6000;
+				chart_gauge_01.animationSpeed = 32;
+				chart_gauge_01.set(3200);
+				chart_gauge_01.setTextField(document.getElementById("gauge-text"));
+			
+			}
+				
 		}	
 		
-		
-		if ($('#gauge-text').length){ 
-		
-			chart_gauge_01.maxValue = 6000;
-			chart_gauge_01.animationSpeed = 32;
-			chart_gauge_01.set(3200);
-			chart_gauge_01.setTextField(document.getElementById("gauge-text"));
-		
-		}
 		
 		if ($('#chart_gauge_02').length){
 		
 			var chart_gauge_02_elem = document.getElementById('chart_gauge_02');
 			var chart_gauge_02 = new Gauge(chart_gauge_02_elem).setOptions(chart_gauge_settings);
+
+			if ($('#gauge-text2').length){
+			
+				chart_gauge_02.maxValue = 9000;
+				chart_gauge_02.animationSpeed = 32;
+				chart_gauge_02.set(2400);
+				chart_gauge_02.setTextField(document.getElementById("gauge-text2"));
+		
+			}
 			
 		}
 		
 		
-		if ($('#gauge-text2').length){
-			
-			chart_gauge_02.maxValue = 9000;
-			chart_gauge_02.animationSpeed = 32;
-			chart_gauge_02.set(2400);
-			chart_gauge_02.setTextField(document.getElementById("gauge-text2"));
-		
-		}
 	
 	
 	}   
@@ -2579,6 +2580,7 @@ if (typeof NProgress != 'undefined') {
 				});
 				$datatable.on('draw.dt', function() {
 				  $('checkbox input').iCheck({
+
 					checkboxClass: 'icheckbox_flat-green'
 				  });
 				});
