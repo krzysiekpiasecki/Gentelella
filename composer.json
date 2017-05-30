@@ -53,6 +53,9 @@
         "test": [
             "php ./vendor/bin/phpunit"
         ],
+        "setup": [
+            "php ./vendor/bin/phing setup"
+        ],        
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
