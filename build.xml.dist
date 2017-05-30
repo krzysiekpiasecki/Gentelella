@@ -15,25 +15,6 @@
                 <exec command="php bin/console doctrine:database:create --if-not-exists"/>
                 <exec command="php bin/console doctrine:schema:create"/> 
                 
-                <echo msg="Setting up a super admin" />
-
-                <if>
-                  <and>
-                    <isset property="${env.ADMIN_NAME}" />
-                    <isset property="${env.ADMIN_EMAIL}" />
-                    <isset property="${env.ADMIN_PASSWORD}" />                  
-                  </and>
-                  <then>
-                    <exec  passthru="true"  command="php bin/console fos:user:create --super-admin ${env.ADMIN_NAME} ${env.ADMIN_EMAIL} ${env.ADMIN_PASSWORD}"/>              
-                  </then>
-                  <else>
-                    <input propertyname="username" defaultValue="no">Please choose a username:</input>
-                    <input propertyname="email" defaultValue="no">Please choose an email:</input>
-                    <input propertyname="password" defaultValue="no">Please choose a password</input>
-                    <exec command="php bin/console fos:user:create ${username} ${email} ${password} --super-admin" />              
-                  </else>
-                </if>
-
                 <echo msg="Installing assets" />
                 <exec command="bower install" passthru="true" />
                 <echo msg="Done ..." />
