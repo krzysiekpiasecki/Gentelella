@@ -15,7 +15,7 @@
   "env": {
     "SYMFONY_ENV": {
       "description": "Symfony run enviroment name",
-      "generator": "prod"
+      "value": "prod"
     }
   }
 }
