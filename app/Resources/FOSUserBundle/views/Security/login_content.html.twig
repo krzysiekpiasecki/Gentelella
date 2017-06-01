@@ -7,11 +7,6 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-              <p>
-              Use public credentials: <strong>admin</strong>
-              <strong>password</strong>
-              </p>
-
               {% if error %}
                 <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 <br/>
