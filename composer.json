@@ -30,7 +30,7 @@
         }
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": "^7.0",
         "symfony/symfony": "^3.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "doctrine/orm": "^2.5",
