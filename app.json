@@ -1,0 +1,21 @@
+{
+  "name": "Gentelella",
+  "description": "A Symfony skeleton application with user account functionality based on the Twitter Bootstrap and Gentelella template.",
+  "repository": "https://github.com/krzysiekpiasecki/Gentelella",
+  "logo": "https://raw.githubusercontent.com/krzysiekpiasecki/Gentelella/master/web/assets/images/img.jpg",
+  "keywords": ["symfony","gentelella","template","bootstrap","admin"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/php"
+    }
+  ],
+  "env": {
+    "SYMFONY_ENV": {
+      "description": "Symfony run enviroment name",
+      "generator": "prod"
+    }
+  }
+}
