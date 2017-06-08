@@ -26,4 +26,9 @@ A Symfony skeleton application with user account functionality based on the Twit
 
 Gentelella - Admin template developed and maintained by Colorlib and Aigars Silkalns
 
+[ousamabenyounes](https://github.com/ousamabenyounes)
+
+[MedUnes](https://github.com/MedUnes)
+
+
 
