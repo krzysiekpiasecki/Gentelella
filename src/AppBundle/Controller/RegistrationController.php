@@ -193,10 +193,10 @@ class RegistrationController extends BaseController
 
     /**
     * Builds data to be sent to the mixed login-register template
-    * @param  FormView  $registrationForm 
-    * @param  Request $request          
-    * @param  string  $div  used to jump to the "#signup"  
-    * @return array                    
+    * @param  FormView  $registrationForm
+    * @param  Request $request
+    * @param  string  $div  used to jump to the "#signup"
+    * @return array
     */
     private function buildTemplateData($registrationForm, Request $request, $div)
     {
