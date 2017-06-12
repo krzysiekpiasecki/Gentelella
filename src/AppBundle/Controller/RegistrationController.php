@@ -33,7 +33,6 @@ use Symfony\Component\Security\Core\Security;
 
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 
-
 /**
  * Controller managing the registration.
  *
@@ -94,11 +93,11 @@ class RegistrationController extends BaseController
 
 
             if (null !== $response = $event->getResponse()) {
-                return $this->render('@FOSUser/Security/login.html.twig', $this->buildTemplateData($form->createView(),$request,'#signup'));
+                return $this->render('@FOSUser/Security/login.html.twig', $this->buildTemplateData($form->createView(), $request, '#signup'));
             }
         }
 
-        return $this->render('@FOSUser/Security/login.html.twig', $this->buildTemplateData($form->createView(),$request,'#signup'));
+        return $this->render('@FOSUser/Security/login.html.twig', $this->buildTemplateData($form->createView(), $request, '#signup'));
     }
 
     /**
@@ -199,10 +198,10 @@ class RegistrationController extends BaseController
     * @param  string  $div  used to jump to the "#signup"  
     * @return array                    
     */
-    private function buildTemplateData($registrationForm,Request $request, $div)
+    private function buildTemplateData($registrationForm, Request $request, $div)
     {
         
-        // This part of code is copied from the SecurityController 
+        // This part of code is copied from the SecurityController
         // It is used to build & send necessary data to the view
         // since it is a mixed login-register view, so that the user can switch
         // between both without errors (lacking variables)
@@ -246,8 +245,7 @@ class RegistrationController extends BaseController
         // this div selector will be sent to the view/template
         // so that we can jump straight to the #signup section if we are in a register context
         // check the login.html.twig template to see how it works
-        if (!(empty($div)))
-        {
+        if (!(empty($div))) {
             $templateData['div']=$div;
         }
         return $templateData;
