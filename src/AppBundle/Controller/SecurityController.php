@@ -22,7 +22,6 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Security;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 
-
 class SecurityController extends BaseController
 {
     /**
@@ -71,5 +70,4 @@ class SecurityController extends BaseController
             'registration_form'=>$form->createView(), //this is what we shall add
         ));
     }
-
 }
