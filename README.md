@@ -17,15 +17,17 @@ A Symfony skeleton application with user account functionality based on the Twit
 
 ### Documentation
 
-[More about the Gentelella](https://github.com/krzysiekpiasecki/Gentelella/wiki)
+[A little more about the Gentelella and how to install and run the application](https://github.com/krzysiekpiasecki/Gentelella/wiki)
 
 
 <br>
 
 ### Credits
 
-Gentelella - Admin template developed and maintained by Colorlib and Aigars Silkalns
+[Gentelella](https://github.com/puikinsh/gentelella) - Admin template developed and maintained by Colorlib and Aigars Silkalns
 
+
+### Contributors
 
 [MedUnes](https://github.com/MedUnes)
 
