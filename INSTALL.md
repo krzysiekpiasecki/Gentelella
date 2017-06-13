@@ -20,7 +20,7 @@ $ composer create-project krzysiekpiasecki/gentelella gentelella "dev-master"
 $ cd gentelella
 $ composer setup
 $ composer test
-$ php bin/console fos:user:create # Set up a role 'ROLE_ADMIN'
+$ php bin/console fos:user:create --super-admin
 $ php bin/console server:run 127.0.0.1:8080 --env=prod
 ```
 
@@ -39,7 +39,7 @@ $ composer create-project krzysiekpiasecki/gentelella gentelella "dev-master"
 $ cd gentelella
 $ php .\vendor\bin\phing setup
 $ php .\vendor\bin\phpunit
-$ php bin\console fos:user:create # Set up a role 'ROLE_ADMIN'
+$ php bin\console fos:user:create --super-admin
 $ php bin\console server:run 127.0.0.1:8080 --env=prod
 ```
 
