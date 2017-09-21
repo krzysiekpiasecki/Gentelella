@@ -1,4 +1,4 @@
-## How to install and run Gentelellla
+## How to install and run Gentelella
 
 To install and run Gentelella application you must have installed:
 
