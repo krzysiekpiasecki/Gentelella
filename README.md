@@ -12,8 +12,6 @@ A Symfony skeleton application with user account functionality based on the Twit
 
 [Gentelella has been installed on Heroku cloud](https://gentelella.herokuapp.com)
 
-##### Log in credentials
-
 Application has been deployed with credentials: __admin__ __password__
 
 
