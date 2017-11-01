@@ -18,7 +18,7 @@ $loader->unregister();
 $apcLoader->register(true);
 */
 
-$kernel = new AppKernel('heroku', false);
+$kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
 
