@@ -54,7 +54,7 @@
             "php ./vendor/bin/phpunit"
         ],
         "setup": [
-            "php ./vendor/bin/phing setup"
+            "php ./vendor/bin/phing --verbose setup"
         ],        
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
