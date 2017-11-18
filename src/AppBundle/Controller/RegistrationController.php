@@ -40,6 +40,7 @@ use FOS\UserBundle\Controller\RegistrationController as BaseController;
 class RegistrationController extends BaseController
 {
     /**
+
      * Register a new user  and grant him  ROLE_USER
      * p.s The newly registered user won't be able to access the Gentelella application routes
      * as it's a dashboard meant for ROLE_ADMIN users.
@@ -60,6 +61,7 @@ class RegistrationController extends BaseController
 
         $user = $userManager->createUser();
         $user->setEnabled(true)->addRole("ROLE_ADMIN");
+        $user->setEnabled(true);
 
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
