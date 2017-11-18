@@ -77,3 +77,9 @@ fos_user:
     from_email:
       address: you@example.com
       sender_name: You
+    service:
+        mailer: fos_user.mailer.twig_swift
+    registration:
+        confirmation:
+            enabled: true
+            template:   '@FOSUser/Registration/email.txt.twig'
