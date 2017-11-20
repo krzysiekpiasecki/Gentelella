@@ -40,11 +40,10 @@ use FOS\UserBundle\Controller\RegistrationController as BaseController;
 class RegistrationController extends BaseController
 {
     /**
-
      * Register a new user  and grant him  ROLE_USER
      * p.s The newly registered user won't be able to access the Gentelella application routes
      * as it's a dashboard meant for ROLE_ADMIN users.
-     * though, we won't grant him ROLE_ADMIN as the responsible for this are SUPER_ADMIN or another ROLE_ADMIN
+     * though, we won't grant him ROLE_ADMIN as the responsible for this are SUPER_ADMIN or another ROLE_ADMIN.
      *
      * @param Request $request
      *
@@ -107,7 +106,6 @@ class RegistrationController extends BaseController
      */
     public function checkEmailAction()
     {
-        
         $email = $this->get('session')->get('fos_user_send_confirmation_email/email');
         if (empty($email)) {
             return new RedirectResponse($this->get('router')->generate('fos_user_registration_register'));
