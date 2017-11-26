@@ -8,7 +8,7 @@
         <div class="animate form login_form">
           <section class="login_content">
               {% if error %}
-                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div style="color:red;text-align:left;padding-bottom:20px;")>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 <br/>
               {% endif %}
               <form action="{{ path("fos_user_security_check") }}" method="POST">
@@ -48,22 +48,32 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-              <form class="fos_user_registration_register" action="{{ path('fos_user_registration_register') }}" method="POST">
-              <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />              
+            {{ form_start(registration_form, {'method': 'post', 'action': path('fos_user_registration_register')}) }}
               <h1>Create Account</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                {{form_widget(registration_form.username, {"attr":{'class':'form-control','placeholder':'Username'}})}}
+                  {% for error in registration_form.username.vars.errors %}
+                    <div style="color:red;text-align:left;padding-bottom:20px;")>{{error.message}}</div>
+                  {% endfor %}
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                 {{form_widget(registration_form.email, {"attr":{'class':'form-control','placeholder':'Email'}})}}
+                {% for error in registration_form.email.vars.errors %}
+                    <div style="color:red;text-align:left;padding-bottom:20px;")>{{error.message}}</div>
+                {% endfor %}
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                 {{form_widget(registration_form.plainPassword.first, {"attr":{'class':'form-control','placeholder':'Password'}})}}
+                  {% for error in registration_form.plainPassword.first.vars.errors %}
+                    <div style="color:red;text-align:left;padding-bottom:20px;")>{{error.message}}</div>
+                  {% endfor %}
               </div>
               <div>
-              <input class="btn btn-default submit" type="submit" value="{{ 'registration.submit'|trans }}" />
-              </div>
-
+              {{form_widget(registration_form.plainPassword.second, {"attr":{'class':'form-control','placeholder':'Confirm Password'}})}}
+                  {% for error in registration_form.plainPassword.second.vars.errors %}
+                    <div style="color:red;text-align:left;padding-bottom:20px;")>{{error.message}}</div>
+                  {% endfor %}
+              <input class="btn btn-default submit" type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" />         
               <div class="clearfix"></div>
 
               <div class="separator">
@@ -79,10 +89,24 @@
                   <p>©2016 All Rights Reserved. <a href="">Privacy and Terms</a></p>
                 </div>
               </div>
-            </form>
+
+             {{ form_end(registration_form)}}
+
           </section>
         </div>
 
         
       </div>
     </div>
+
+    {# if the div variable is passed, then use javascript to jump to it #}
+    {# This is used because the login and register forms are both on the same view #}
+    {% if div is defined and div is not empty %}
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(event)
+      { 
+        location.href="{{div}}"
+      });
+    </script>
+    {% endif %}
+
