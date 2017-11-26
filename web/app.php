@@ -19,7 +19,6 @@ $apcLoader->register(true);
 */
 
 $kernel = new AppKernel('heroku', false);
-// !!! THIS LINE SHOULD BE REMOVED DUE TO DEPRECATION $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
 
 // When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
