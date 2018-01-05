@@ -48,7 +48,7 @@
         "symfony/phpunit-bridge": "^3.0",
         "friendsofphp/php-cs-fixer": "^2.0",
         "phpunit/phpunit": "^4.8.0",
-        "symfony/web-server-bundle": "^3.3"
+        "symfony/web-server-bundle": "^3.4.2"
     },
     "scripts": {
         "test": [
