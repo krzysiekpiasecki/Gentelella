@@ -47,7 +47,7 @@
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
         "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^4.8.0",
+        "phpunit/phpunit": "^6.5.0",
         "symfony/web-server-bundle": "^3.4.2"
     },
     "config": {
