@@ -50,6 +50,11 @@
         "phpunit/phpunit": "^4.8.0",
         "symfony/web-server-bundle": "^3.4.2"
     },
+    "config": {
+        "platform": {
+            "php": "7.0.8"
+        }
+    },
     "scripts": {
         "test": [
             "php ./vendor/bin/phpunit"
