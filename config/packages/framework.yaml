@@ -13,3 +13,15 @@ framework:
     #fragments: ~
     php_errors:
         log: true
+
+    session:
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+
+    templating:
+      engines: ['twig']
+
+    translator: ~
+
+    csrf_protection:
+      enabled: true

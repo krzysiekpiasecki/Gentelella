@@ -1,0 +1,731 @@
+
+Warning: PHP Startup: ast: Unable to initialize module
+Module compiled with module API=20160303
+PHP    compiled with module API=20170718
+These options need to match
+ in Unknown on line 0
+#!/usr/bin/env php
+PHPUnit 6.5.5 by Sebastian Bergmann and contributors.
+
+Testing Project Test Suite
+[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m 65 / 89 ( 73%)
+[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m[31;1mE[0m                                          89 / 89 (100%)
+
+Time: 703 ms, Memory: 16.00MB
+
+There were 89 errors:
+
+1) AppBundle\Controller\SidebarControllerTest::testLogo
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/SidebarControllerTest.php:24
+
+2) AppBundle\Controller\SidebarControllerTest::testDashboard
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/SidebarControllerTest.php:36
+
+3) AppBundle\Controller\SidebarControllerTest::testGoTemplateReturnApp
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/SidebarControllerTest.php:48
+
+4) AppBundle\Controller\SidebarControllerTest::testPageNotFound
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/SidebarControllerTest.php:67
+
+5) AppBundle\Controller\SidebarControllerTest::testLogoutAction
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/SidebarControllerTest.php:80
+
+6) AppBundle\Controller\TopNavControllerTest::testProfile
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/TopNavControllerTest.php:25
+
+7) AppBundle\Controller\TopNavControllerTest::testLogoutAction
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/Controller/TopNavControllerTest.php:37
+
+8) AppBundle\GentelellaTest::testBackToApp with data set #0 ('/gentelella')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+9) AppBundle\GentelellaTest::testBackToApp with data set #1 ('/gentelella/index')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+10) AppBundle\GentelellaTest::testBackToApp with data set #2 ('/gentelella/calendar')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+11) AppBundle\GentelellaTest::testBackToApp with data set #3 ('/gentelella/chartjs')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+12) AppBundle\GentelellaTest::testBackToApp with data set #4 ('/gentelella/chartjs2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+13) AppBundle\GentelellaTest::testBackToApp with data set #5 ('/gentelella/contacts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+14) AppBundle\GentelellaTest::testBackToApp with data set #6 ('/gentelella/e_commerce')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+15) AppBundle\GentelellaTest::testBackToApp with data set #7 ('/gentelella/echarts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+16) AppBundle\GentelellaTest::testBackToApp with data set #8 ('/gentelella/fixed_footer')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+17) AppBundle\GentelellaTest::testBackToApp with data set #9 ('/gentelella/fixed_sidebar')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+18) AppBundle\GentelellaTest::testBackToApp with data set #10 ('/gentelella/form')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+19) AppBundle\GentelellaTest::testBackToApp with data set #11 ('/gentelella/form_advanced')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+20) AppBundle\GentelellaTest::testBackToApp with data set #12 ('/gentelella/form_buttons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+21) AppBundle\GentelellaTest::testBackToApp with data set #13 ('/gentelella/form_upload')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+22) AppBundle\GentelellaTest::testBackToApp with data set #14 ('/gentelella/form_validation')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+23) AppBundle\GentelellaTest::testBackToApp with data set #15 ('/gentelella/form_wizards')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+24) AppBundle\GentelellaTest::testBackToApp with data set #16 ('/gentelella/general_elements')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+25) AppBundle\GentelellaTest::testBackToApp with data set #17 ('/gentelella/glyphicons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+26) AppBundle\GentelellaTest::testBackToApp with data set #18 ('/gentelella/icons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+27) AppBundle\GentelellaTest::testBackToApp with data set #19 ('/gentelella/inbox')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+28) AppBundle\GentelellaTest::testBackToApp with data set #20 ('/gentelella/index')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+29) AppBundle\GentelellaTest::testBackToApp with data set #21 ('/gentelella/index2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+30) AppBundle\GentelellaTest::testBackToApp with data set #22 ('/gentelella/index3')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+31) AppBundle\GentelellaTest::testBackToApp with data set #23 ('/gentelella/invoice')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+32) AppBundle\GentelellaTest::testBackToApp with data set #24 ('/gentelella/level2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+33) AppBundle\GentelellaTest::testBackToApp with data set #25 ('/gentelella/media_gallery')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+34) AppBundle\GentelellaTest::testBackToApp with data set #26 ('/gentelella/morisjs')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+35) AppBundle\GentelellaTest::testBackToApp with data set #27 ('/gentelella/other_charts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+36) AppBundle\GentelellaTest::testBackToApp with data set #28 ('/gentelella/plain_page')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+37) AppBundle\GentelellaTest::testBackToApp with data set #29 ('/gentelella/pricing_tables')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+38) AppBundle\GentelellaTest::testBackToApp with data set #30 ('/gentelella/profile')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+39) AppBundle\GentelellaTest::testBackToApp with data set #31 ('/gentelella/project_detail')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+40) AppBundle\GentelellaTest::testBackToApp with data set #32 ('/gentelella/projects')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+41) AppBundle\GentelellaTest::testBackToApp with data set #33 ('/gentelella/tables')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+42) AppBundle\GentelellaTest::testBackToApp with data set #34 ('/gentelella/tables_dynamic')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+43) AppBundle\GentelellaTest::testBackToApp with data set #35 ('/gentelella/typography')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+44) AppBundle\GentelellaTest::testBackToApp with data set #36 ('/gentelella/widgets')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/GentelellaTest.php:75
+
+45) AppBundle\URLTest::testResponseOK with data set #0 ('/')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+46) AppBundle\URLTest::testResponseOK with data set #1 ('/profile')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+47) AppBundle\URLTest::testResponseOK with data set #2 ('/gentelella')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+48) AppBundle\URLTest::testResponseOK with data set #3 ('/gentelella/index')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+49) AppBundle\URLTest::testResponseOK with data set #4 ('/gentelella/calendar')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+50) AppBundle\URLTest::testResponseOK with data set #5 ('/gentelella/chartjs')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+51) AppBundle\URLTest::testResponseOK with data set #6 ('/gentelella/chartjs2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+52) AppBundle\URLTest::testResponseOK with data set #7 ('/gentelella/contacts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+53) AppBundle\URLTest::testResponseOK with data set #8 ('/gentelella/e_commerce')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+54) AppBundle\URLTest::testResponseOK with data set #9 ('/gentelella/echarts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+55) AppBundle\URLTest::testResponseOK with data set #10 ('/gentelella/fixed_footer')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+56) AppBundle\URLTest::testResponseOK with data set #11 ('/gentelella/fixed_sidebar')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+57) AppBundle\URLTest::testResponseOK with data set #12 ('/gentelella/form')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+58) AppBundle\URLTest::testResponseOK with data set #13 ('/gentelella/form_advanced')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+59) AppBundle\URLTest::testResponseOK with data set #14 ('/gentelella/form_buttons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+60) AppBundle\URLTest::testResponseOK with data set #15 ('/gentelella/form_upload')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+61) AppBundle\URLTest::testResponseOK with data set #16 ('/gentelella/form_validation')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+62) AppBundle\URLTest::testResponseOK with data set #17 ('/gentelella/form_wizards')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+63) AppBundle\URLTest::testResponseOK with data set #18 ('/gentelella/general_elements')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+64) AppBundle\URLTest::testResponseOK with data set #19 ('/gentelella/glyphicons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+65) AppBundle\URLTest::testResponseOK with data set #20 ('/gentelella/icons')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+66) AppBundle\URLTest::testResponseOK with data set #21 ('/gentelella/inbox')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+67) AppBundle\URLTest::testResponseOK with data set #22 ('/gentelella/index')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+68) AppBundle\URLTest::testResponseOK with data set #23 ('/gentelella/index2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+69) AppBundle\URLTest::testResponseOK with data set #24 ('/gentelella/index3')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+70) AppBundle\URLTest::testResponseOK with data set #25 ('/gentelella/invoice')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+71) AppBundle\URLTest::testResponseOK with data set #26 ('/gentelella/level2')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+72) AppBundle\URLTest::testResponseOK with data set #27 ('/gentelella/login')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+73) AppBundle\URLTest::testResponseOK with data set #28 ('/gentelella/map')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+74) AppBundle\URLTest::testResponseOK with data set #29 ('/gentelella/media_gallery')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+75) AppBundle\URLTest::testResponseOK with data set #30 ('/gentelella/morisjs')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+76) AppBundle\URLTest::testResponseOK with data set #31 ('/gentelella/other_charts')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+77) AppBundle\URLTest::testResponseOK with data set #32 ('/gentelella/page_403')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+78) AppBundle\URLTest::testResponseOK with data set #33 ('/gentelella/page_404')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+79) AppBundle\URLTest::testResponseOK with data set #34 ('/gentelella/page_500')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+80) AppBundle\URLTest::testResponseOK with data set #35 ('/gentelella/plain_page')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+81) AppBundle\URLTest::testResponseOK with data set #36 ('/gentelella/pricing_tables')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+82) AppBundle\URLTest::testResponseOK with data set #37 ('/gentelella/profile')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+83) AppBundle\URLTest::testResponseOK with data set #38 ('/gentelella/project_detail')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+84) AppBundle\URLTest::testResponseOK with data set #39 ('/gentelella/projects')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+85) AppBundle\URLTest::testResponseOK with data set #40 ('/gentelella/tables')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+86) AppBundle\URLTest::testResponseOK with data set #41 ('/gentelella/tables_dynamic')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+87) AppBundle\URLTest::testResponseOK with data set #42 ('/gentelella/typography')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+88) AppBundle\URLTest::testResponseOK with data set #43 ('/gentelella/widgets')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+89) AppBundle\URLTest::testResponseOK with data set #44 ('/gentelella/xx')
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "test.client".
+
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/vendor/symfony/dependency-injection/Container.php:263
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:53
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/bootstrap.php:43
+/Users/krzysztek/Documents/Workspaces/php/Gentelella/tests/App/URLTest.php:29
+
+[37;41mERRORS![0m
+[37;41mTests: 89[0m[37;41m, Assertions: 0[0m[37;41m, Errors: 89[0m[37;41m.[0m

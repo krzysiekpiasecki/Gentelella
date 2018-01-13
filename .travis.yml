@@ -1,0 +1,38 @@
+sudo: false
+
+env:
+  SYMFONY_ENV=test
+
+language: php
+
+services:
+  - mysql
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+before_install:
+ - mysql -e 'create database gentelella;'
+
+install:
+  - travis_retry composer selfupdate
+  - travis_retry composer install --no-interaction --prefer-source
+
+before_script:
+  - phpenv config-add php.ini.dist
+  - ./vendor/bin/security-checker  security:check --end-point=http://security.sensiolabs.org/check_lock
+
+  - ./bin/console doctrine:schema:create
+
+script:
+  - ./vendor/bin/php-cs-fixer fix --dry-run
+  - ./vendor/bin/phpunit
+
+after_success:
+after_failure:
+after_script:
+before_deploy:
+deploy:
+after_deploy:

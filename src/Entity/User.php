@@ -5,7 +5,7 @@
  * that was distributed with this source code.
  */
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
