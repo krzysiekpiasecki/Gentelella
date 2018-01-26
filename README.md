@@ -2,7 +2,7 @@
 
 A skeleton application with user account functionality on the foundation of the Symfony framework, Twitter Bootstrap and Gentelella template. 
 
-Interested in Symfony administrator application? See necessarily [Symfonator](https://github.com/krzysiekpiasecki/Symfonator).
+Interested in Symfony administrator application? See necessarily [Symfonator](https://github.com/krzysiekpiasecki/Symfonator/admin).
 
 <br/>
 
