@@ -37,8 +37,8 @@ Start the mysql server first. Then run the commands in the terminal:
 ```shell
 $ composer create-project krzysiekpiasecki/gentelella gentelella "dev-master"
 $ cd gentelella
-$ php .\vendor\bin\phing setup
-$ php .\vendor\bin\phpunit
+$ .\vendor\bin\phing.bat setup
+$ .\vendor\bin\phpunit.bat
 $ php bin\console fos:user:create --super-admin
 $ php bin\console server:run 127.0.0.1:8080 --env=prod
 ```
