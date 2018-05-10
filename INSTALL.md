@@ -21,7 +21,7 @@ $ cd gentelella
 $ composer setup
 $ composer test
 $ php bin/console fos:user:create --super-admin
-$ php bin/console server:run 127.0.0.1:8080 --env=prod
+$ php bin/console server:run 127.0.0.1:8080 --env=dev
 ```
 
 After successfully running all commands navigate to:
